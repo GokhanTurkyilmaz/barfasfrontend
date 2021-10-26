@@ -21,7 +21,7 @@
  var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 
- app.get('/ReadProfile', urlencodedParser, function (req, res) {
+ app.get('/admin', urlencodedParser, function (req, res) {
 
      res.send("hello barfas");
    
