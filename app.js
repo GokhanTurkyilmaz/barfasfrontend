@@ -23,7 +23,7 @@
 
  app.get('/admin', urlencodedParser, function (req, res) {
 
-     res.send("hello barfas");
+     res.render('index')
    
  })
 
