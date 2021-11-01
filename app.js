@@ -23,9 +23,15 @@
 
  app.get('/admin', urlencodedParser, function (req, res) {
 
-     res.send("hello barfas");
+     res.render('index')
    
  })
+ app.get('/mainpage', urlencodedParser, function (req, res) {
+
+  res.render('mainpage')
+
+})
+
 
  
  app.listen(port, () => {
