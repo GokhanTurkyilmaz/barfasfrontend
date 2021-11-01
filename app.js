@@ -26,6 +26,12 @@
      res.render('index')
    
  })
+ app.get('/mainpage', urlencodedParser, function (req, res) {
+
+  res.render('mainpage')
+
+})
+
 
  
  app.listen(port, () => {
