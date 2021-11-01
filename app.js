@@ -7,6 +7,7 @@
  var bodyParser = require('body-parser')
  var axios = require('axios')
  var pach = require('path')
+ var apis = require('./api_module')
  app.set("view engine", "ejs")
  var cookieParser = require('cookie-parser')
  const port = 9000
@@ -28,7 +29,17 @@
  })
  app.get('/mainpage', urlencodedParser, function (req, res) {
 
-  res.render('mainpage')
+ 
+  apis.show_mydevice("617bf0aa95e511c1a188d51c")
+  setTimeout(function(){
+    apis.show_tabble("617bf0aa95e511c1a188d51c")
+    const tabblelist = apis.tabblelist
+    const mydevicelist = apis.mydevicelist
+    res.render('mainpage',{data1:tabblelist,data2:mydevicelist})
+
+  },3000)
+
+  
 
 })
 
