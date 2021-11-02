@@ -34,6 +34,9 @@ app.get('/admin', urlencodedParser, function (req, res) {
 app.get('/mainpage', urlencodedParser, function (req, res) {
   res.render('mainpage');
 });
+app.get('/addperson', urlencodedParser, function (req, res) {
+  res.render('addperson');
+});
 app.listen(port, function () {
   console.log("Example app listening at http://localhost:".concat(port));
 });
