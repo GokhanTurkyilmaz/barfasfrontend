@@ -32,6 +32,17 @@
 
 })
 
+app.get('/addperson', urlencodedParser, function (req, res) {
+
+  res.render('addperson')
+
+})
+app.get('/adddevice', urlencodedParser, function (req, res) {
+
+  res.render('adddevice')
+
+})
+
 
  
  app.listen(port, () => {
