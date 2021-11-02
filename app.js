@@ -42,6 +42,11 @@ app.get('/adddevice', urlencodedParser, function (req, res) {
   res.render('adddevice')
 
 })
+app.get('/smartrules', urlencodedParser, function (req, res) {
+
+  res.render('smartrules')
+
+})
 
 
  
