@@ -70,6 +70,7 @@
 }
 .ti-settings:before {
 	content: "\e60f";
+	margin-right: 7px; 
 }
 .ti-search:before {
 	content: "\e610";

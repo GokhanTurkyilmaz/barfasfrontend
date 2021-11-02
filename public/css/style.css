@@ -10301,7 +10301,7 @@ pre code {
 .form-control {
   display: block;
   width: 100%;
-  height: 2.875rem;
+  height: 2.5rem;
   padding: 0.875rem 1.375rem;
   font-size: 0.875rem;
   font-weight: 400;
@@ -10420,6 +10420,7 @@ textarea.form-control {
 
 .form-group {
   margin-bottom: 1rem;
+align-items: baseline;  
 }
 
 .form-text {
@@ -12424,7 +12425,26 @@ input[type="button"].btn-block {
     transition: none;
   }
 }
-
+.Smartrules-blue{
+  height: 50px;
+  width: 50px;
+  color: aquamarine;
+  background: #4341b9;
+  border-radius: 50%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  }
+.Smartrules-red{
+height: 50px;
+width: 50px;
+color: aquamarine;
+background: #c91717;
+border-radius: 50%;
+align-items: center;
+display: flex;
+justify-content: center;
+}
 .nav {
   display: flex;
   flex-wrap: wrap;
