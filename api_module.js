@@ -2,6 +2,7 @@
  * show tabbles api
  */
 var axios = require('axios');
+
 function show_tabble(id){
 var data = JSON.stringify({
   "id": ""+id+""
@@ -30,6 +31,7 @@ axios(config)
  * show decice with id api
  */
  function show_mydevice(id){
+   
  var data = JSON.stringify({
    "id": ""+id+""
  });

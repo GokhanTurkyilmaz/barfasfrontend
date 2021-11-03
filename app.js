@@ -31,10 +31,13 @@
   apis.show_mydevice("617bf0aa95e511c1a188d51c")
   setTimeout(function(){
     apis.show_tabble("617bf0aa95e511c1a188d51c")
-    const tabblelist = apis.tabblelist
-    const mydevicelist = apis.mydevicelist
-    res.render('mainpage',{data1:tabblelist,data2:mydevicelist})
-
+    const tabblelist =  apis.tabblelist
+    const mydevicelist =  apis.mydevicelist
+    if(tabblelist != null && mydevicelist != null){
+      res.render('mainpage',{data1:tabblelist,data2:mydevicelist})
+    }else{
+      res.json("data is looding ..")
+    }
   },3500)
 
   
@@ -65,15 +68,15 @@ app.get('/smartrules', urlencodedParser, function (req, res) {
   */
   app.post('/add/device', urlencodedParser, function (req, res) {
 var data = JSON.stringify({
-  "DeviceName": "blackdoor",
-  "SN": "146646s",
-  "Model": "barfas3",
-  "Type": "optopark systems",
-  "Department": "barfas",
-  "DeviceIP": "192.161.1.1",
-  "DeviceAdmin": "admin",
-  "DeviceSuperUser": "admin",
-  "Remark": "text",
+  "DeviceName": req.body.DeviceName,
+  "SN": req.body.SN,
+  "Model": req.body.Model,
+  "Type": req.body.Type,
+  "Department": req.body.Department,
+  "DeviceIP": req.body.DeviceIP,
+  "DeviceAdmin": req.body.DeviceAdmin,
+  "DeviceSuperUser": req.body.DeviceSuperUser,
+  "Remark": req.body.Remark,
   "UserId": "617bf0aa95e511c1a188d51c",
   "role": "admin"
 });
