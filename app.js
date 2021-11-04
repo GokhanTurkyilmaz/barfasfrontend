@@ -63,6 +63,7 @@ app.get('/smartrules', urlencodedParser, function (req, res) {
 /**
  * Actions
  */
+
  /**
   * add devise
   */
@@ -103,9 +104,67 @@ axios(config)
 .catch(function (error) {
   console.log(error);
 });
-
-
   })
+ /**
+  * add personnel 
+  */
+  app.post('/add/personnel', urlencodedParser, function (req, res) {
+    var data = JSON.stringify({
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxN2MwZDdjMTE4MWViNDg4MzI4MWU5MCIsImlhdCI6MTYzNTUyOTkxNH0.WoBgn29V4aiNONxuXMsoFln8K4svvQVndg-Pwhdqa0Q",
+      "Name": req.body.Name,
+      "FullName": req.body.FullName,
+      "Email": req.body.Email,
+      "PhoneNumber": req.body.PhoneNumber,
+      "Password": req.body.Password,
+      "Sex": req.body.Sex,
+      "Role": {
+        "Admin": "false",
+        "Customer": "false",
+        "EndUser": "true"
+      },
+      "Departman": req.body.Departman,
+      "UserId": "617bf0aa95e511c1a188d51c",
+      "PersonnelId": req.body.PersonnelId,
+      "StaffCode": req.body.StaffCode,
+      "situation": {
+        "Whether": req.body.Whether,
+        "SeniorMode": req.body.SeniorMode
+      },
+      "CardNo": req.body.CardNo,
+      "PunchPwd": req.body.,
+      "EntryStatus": req.body.EntryStatus,
+      "IDNO": req.body.IDNO,
+      "Positsion": req.body.Positsion,
+      "StaffType": req.body.StaffType,
+      "Degree": req.body.Degree,
+      "Address": req.body.Address,
+      "tell": req.body.tell,
+      "Photo": req.body.Photo
+    });
+    
+    var config = {
+      method: 'post',
+      url: 'https://barfas-server.herokuapp.com/insert/personnel',
+      headers: { 
+        'Content-Type': 'application/json'
+      },
+      data : data
+    };
+    
+    axios(config)
+    .then(function (response) {
+      const additem = JSON.stringify(response.data)
+      const dataadd = JSON.parse(additem) 
+          if (dataadd.Status === true){
+            res.redirect('/mainpage')
+          }else {
+            res.send("err!")
+          }
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+      })
  ///app.listen(port, () => {
   /// console.log(`Example app listening at http://localhost:${port}`)
   const PORT = process.env.PORT || 3000;
