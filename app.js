@@ -45,8 +45,16 @@
 })
 
 app.get('/addperson', urlencodedParser, function (req, res) {
+  apis.show_department("617bf0aa95e511c1a188d51c")
+  setTimeout(function(){
+    const answer = apis.departmenlist
+    if(answer != null){
+      res.render('addperson',{data:answer})
+    }
 
-  res.render('addperson')
+  },1500)
+
+  
 
 })
 app.get('/adddevice', urlencodedParser, function (req, res) {
@@ -165,10 +173,10 @@ axios(config)
       console.log(error);
     });
       })
- ///app.listen(port, () => {
-  /// console.log(`Example app listening at http://localhost:${port}`)
-  const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Our app is running on port ${ PORT }`);
+ /app.listen(port, () => {
+ console.log(`Example app listening at http://localhost:${port}`)
+  ///const PORT = process.env.PORT || 3000;
+//app.listen(PORT, () => {
+  ///  console.log(`Our app is running on port ${ PORT }`);
 
  })

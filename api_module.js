@@ -55,6 +55,34 @@ axios(config)
  });
  
  }
-
+/**
+ * show department list with id
+ */
+ function show_department(id){
+   
+  var data = JSON.stringify({
+    "UserId":  ""+id+""
+  });
+  
+  var config = {
+    method: 'post',
+    url: 'https://barfas-server.herokuapp.com/finddepartment',
+    headers: { 
+      'Content-Type': 'application/json'
+    },
+    data : data
+  };
+  
+  axios(config)
+  .then(function (response) {
+    const departmenlist =  response.data
+    exports.departmenlist=departmenlist
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+  
+  }
 exports.show_tabble=show_tabble
 exports.show_mydevice=show_mydevice
+exports.show_department=show_department
