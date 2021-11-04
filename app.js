@@ -131,7 +131,7 @@ axios(config)
         "SeniorMode": req.body.SeniorMode
       },
       "CardNo": req.body.CardNo,
-      "PunchPwd": req.body.,
+      "PunchPwd": req.body.PunchPwd,
       "EntryStatus": req.body.EntryStatus,
       "IDNO": req.body.IDNO,
       "Positsion": req.body.Positsion,
@@ -156,7 +156,7 @@ axios(config)
       const additem = JSON.stringify(response.data)
       const dataadd = JSON.parse(additem) 
           if (dataadd.Status === true){
-            res.redirect('/mainpage')
+            res.send(" a personnel has been added but you not have UI for show that, you can see from postman or database")
           }else {
             res.send("err!")
           }
