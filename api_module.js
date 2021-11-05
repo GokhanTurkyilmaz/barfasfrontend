@@ -10,7 +10,8 @@ var data = JSON.stringify({
 
 var config = {
   method: 'post',
-  url: 'https://barfas-server.herokuapp.com/tabbleslist',
+ url: 'https://barfas-server.herokuapp.com/tabbleslist',
+  //url: 'http://localhost:3000/tabbleslist',
   headers: { 
     'Content-Type': 'application/json'
   },
@@ -39,6 +40,7 @@ axios(config)
  var config = {
    method: 'post',
    url: 'https://barfas-server.herokuapp.com/finddevicewithid',
+   ///url: 'http://localhost:3000/finddevicewithid',
    headers: { 
      'Content-Type': 'application/json'
    },
@@ -67,6 +69,7 @@ axios(config)
   var config = {
     method: 'post',
     url: 'https://barfas-server.herokuapp.com/finddepartment',
+   // url: 'http://localhost:3000/finddepartment',
     headers: { 
       'Content-Type': 'application/json'
     },

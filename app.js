@@ -92,7 +92,8 @@ var data = JSON.stringify({
 
 var config = {
   method: 'post',
-  url: 'https://barfas-server.herokuapp.com/insert/device',
+ url: 'https://barfas-server.herokuapp.com/insert/device',
+ /// url: 'http://localhost:3000/insert/insert/device',
   headers: { 
     'Content-Type': 'application/json'
   },
@@ -153,6 +154,7 @@ axios(config)
     var config = {
       method: 'post',
       url: 'https://barfas-server.herokuapp.com/insert/personnel',
+      ///url: 'http://localhost:3000/insert/personnel',
       headers: { 
         'Content-Type': 'application/json'
       },
@@ -174,7 +176,7 @@ axios(config)
     });
       })
  /app.listen(port, () => {
- console.log(`Example app listening at http://localhost:${port}`)
+ console.log(`Example app listening at http://127.0.0.1:${port}`)
   ///const PORT = process.env.PORT || 3000;
 //app.listen(PORT, () => {
   ///  console.log(`Our app is running on port ${ PORT }`);
