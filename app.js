@@ -10,7 +10,7 @@
  var apis = require('./api_module')
  app.set("view engine", "ejs")
  var cookieParser = require('cookie-parser')
- const port = 9000
+ const port = 5000
  app.use(cookieParser())
  app.use(express.static('public'))
  app.use('/css',express.static(__dirname + 'public/css'))
@@ -28,9 +28,9 @@
    
  })
  app.get('/mainpage', urlencodedParser, function (req, res) {
-  apis.show_mydevice("617bf0aa95e511c1a188d51c")
+  apis.show_mydevice("61879efcfb37724ae80c6db8")
   setTimeout(function(){
-    apis.show_tabble("617bf0aa95e511c1a188d51c")
+    apis.show_tabble("61879efcfb37724ae80c6db8")
     const tabblelist =  apis.tabblelist
     const mydevicelist =  apis.mydevicelist
     if(tabblelist != null && mydevicelist != null){
@@ -38,21 +38,21 @@
     }else{
       res.json("data is looding ..")
     }
-  },3500)
+  },1000)
 
   
 
 })
 
 app.get('/addperson', urlencodedParser, function (req, res) {
-  apis.show_department("617bf0aa95e511c1a188d51c")
+  apis.show_department("61879efcfb37724ae80c6db8")
   setTimeout(function(){
-    const answer = apis.departmenlist
+    const answer =  apis.departmenlist
     if(answer != null){
       res.render('addperson',{data:answer})
     }
 
-  },1500)
+  },100)
 
   
 
@@ -86,14 +86,14 @@ var data = JSON.stringify({
   "DeviceAdmin": req.body.DeviceAdmin,
   "DeviceSuperUser": req.body.DeviceSuperUser,
   "Remark": req.body.Remark,
-  "UserId": "617bf0aa95e511c1a188d51c",
+  "UserId": "61879efcfb37724ae80c6db8",
   "role": "admin"
 });
 
 var config = {
   method: 'post',
- url: 'https://barfas-server.herokuapp.com/insert/device',
- /// url: 'http://localhost:3000/insert/insert/device',
+ ////url: 'https://barfas-server.herokuapp.com/insert/device',
+  url: 'http://localhost:3000/insert/device',
   headers: { 
     'Content-Type': 'application/json'
   },
@@ -132,7 +132,7 @@ axios(config)
         "EndUser": "true"
       },
       "Departman": req.body.Departman,
-      "UserId": "617bf0aa95e511c1a188d51c",
+      "UserId": "61879efcfb37724ae80c6db8",
       "PersonnelId": req.body.PersonnelId,
       "StaffCode": req.body.StaffCode,
       "situation": {
@@ -153,8 +153,8 @@ axios(config)
     
     var config = {
       method: 'post',
-      url: 'https://barfas-server.herokuapp.com/insert/personnel',
-      ///url: 'http://localhost:3000/insert/personnel',
+     /// url: 'https://barfas-server.herokuapp.com/insert/personnel',
+     url: 'http://localhost:3000/insert/personnel',
       headers: { 
         'Content-Type': 'application/json'
       },
@@ -175,10 +175,10 @@ axios(config)
       console.log(error);
     });
       })
- ////app.listen(port, () => {
- ////console.log(`Example app listening at http://localhost:${port}`)
-  const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Our app is running on port ${ PORT }`);
+ app.listen(port, () => {
+ console.log(`Example app listening at http://localhost:${port}`)
+ // const PORT = process.env.PORT || 3000;
+///app.listen(PORT, () => {
+   /// console.log(`Our app is running on port ${ PORT }`);
 
  })

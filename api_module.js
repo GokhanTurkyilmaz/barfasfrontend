@@ -10,8 +10,8 @@ var data = JSON.stringify({
 
 var config = {
   method: 'post',
- url: 'https://barfas-server.herokuapp.com/tabbleslist',
-  //url: 'http://localhost:3000/tabbleslist',
+ ///url: 'https://barfas-server.herokuapp.com/tabbleslist',
+  url: 'http://localhost:3000/tabbleslist',
   headers: { 
     'Content-Type': 'application/json'
   },
@@ -39,8 +39,8 @@ axios(config)
  
  var config = {
    method: 'post',
-   url: 'https://barfas-server.herokuapp.com/finddevicewithid',
-   ///url: 'http://localhost:3000/finddevicewithid',
+   ///url: 'https://barfas-server.herokuapp.com/finddevicewithid',
+   url: 'http://localhost:3000/finddevicewithid',
    headers: { 
      'Content-Type': 'application/json'
    },
@@ -68,18 +68,18 @@ axios(config)
   
   var config = {
     method: 'post',
-    url: 'https://barfas-server.herokuapp.com/finddepartment',
-   // url: 'http://localhost:3000/finddepartment',
+    ///url: 'https://barfas-server.herokuapp.com/finddepartment',
+    url: 'http://localhost:3000/finddepartment',
     headers: { 
       'Content-Type': 'application/json'
     },
     data : data
   };
   
-  axios(config)
+   axios(config)
   .then(function (response) {
-    const departmenlist =  response.data
-    exports.departmenlist=departmenlist
+   const departmenlist =  response.data
+     exports.departmenlist=departmenlist
   })
   .catch(function (error) {
     console.log(error);
