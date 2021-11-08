@@ -221,7 +221,7 @@
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">Personal Add Screen</h4>
-                <form class="form-sample">
+                <form action="add/personnel" method="post" class="form-sample">
                   <p class="card-description">
                     Personal info
                   </p>
@@ -236,7 +236,7 @@
                             <label for="validationTooltip01" class="col-sm-3 col-form-label">User ID</label>
                             <div class="col-sm-6">
                               <input type="text" class="form-control" id="validationTooltip01" placeholder="User ID"
-                                required />
+                                required name="PersonnelId" />
                               <div class="invalid-feedback">
                                 Please provide a valid User ID.
                               </div>
@@ -248,7 +248,7 @@
                             <label for="validationCustom03" class="col-sm-3 col-form-label">Name</label>
                             <div class="col-sm-6">
                               <input type="text" class="form-control" id="validationCustom03" placeholder="Name"
-                                required />
+                                required  name="Name"/>
                               <div class="valid-feedback">
                                 Please provide a Name.
                               </div>
@@ -265,7 +265,7 @@
                             <label for="validationTooltip01" class="col-sm-3 col-form-label">Staff Code</label>
                             <div class="col-sm-6">
                               <input type="text" class="form-control" id="validationTooltip01" placeholder="Staff Code"
-                                required />
+                                required name="StaffCode" />
                               <div class="invalid-feedback">
                                 Please provide a valid User ID.
                               </div>
@@ -276,9 +276,9 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Gender</label>
                             <div class="col-sm-6">
-                              <select class="form-control">
-                                <option> Male</option>
-                                <option> Female</option>
+                              <select class="form-control" name="Sex">
+                                <option value="Male"> Male</option>
+                                <option value="Female"> Female</option>
                               </select>
                             </div>
                           </div>
@@ -295,16 +295,18 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
+                            
                             <label class="col-sm-3 col-form-label">Department</label>
                             <div class="col-sm-6">
-                              <select class="form-control">
-                                <option>Dept1</option>
-                                <option>Dept2</option>
-                                <option>Dept3</option>
-                                <option>Dept4</option>
+                              <select class="form-control" name="Departman">
+                                <% for(var i=0; i < data.length; i++) { %>
+                                <option value="<%= data[i].DepartmentName %>"><%= data[i].DepartmentName %></option>
+                                <% } %>
                               </select>
                             </div>
+                            
                           </div>
+                          
                         </div>
                         <div class="col-md-6">
                           <div class="form-group row">
@@ -312,8 +314,8 @@
                             <div class="col-sm-6">
                               <div class="form-check">
                                 <label class="form-check-label">
-                                  <input type="radio" class="form-check-input" name="membershipRadios"
-                                    id="membershipRadios1" value="" checked>
+                                  <input type="radio" class="form-check-input" name="Whether"
+                                    id="membershipRadios1" value="true" checked>
                                   Whether to participate in attendance
                                 </label>
                               </div>
@@ -321,8 +323,8 @@
                             <div class="col-sm-5">
                               <div class="form-check">
                                 <label class="form-check-label">
-                                  <input type="radio" class="form-check-input" name="membershipRadios"
-                                    id="membershipRadios2" value="option2">
+                                  <input type="radio" class="form-check-input" name="SeniorMode"
+                                    id="membershipRadios2" value="true">
                                   Senior Mode
                                 </label>
                               </div>
@@ -338,7 +340,7 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Card No</label>
                             <div class="col-sm-6">
-                              <input type="text" class="form-control" />
+                              <input type="text" class="form-control" name="CardNo" />
                             </div>
                           </div>
                         </div>
@@ -346,7 +348,7 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Punch Pwd</label>
                             <div class="col-sm-6">
-                              <input type="text" class="form-control" />
+                              <input type="text" class="form-control"  name="PunchPwd"/>
                             </div>
                           </div>
                         </div>
@@ -356,7 +358,7 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Password</label>
                             <div class="col-sm-6">
-                              <input type="text" class="form-control" />
+                              <input type="text" class="form-control" name="Password" />
                             </div>
                           </div>
                         </div>
@@ -364,7 +366,7 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Mobile No</label>
                             <div class="col-sm-6">
-                              <input type="text" class="form-control" />
+                              <input type="text" class="form-control" name="PhoneNumber" />
                             </div>
                           </div>
                         </div>
@@ -382,11 +384,11 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Entry Status</label>
                             <div class="col-sm-6">
-                              <select class="form-control">
-                                <option>Status1</option>
-                                <option>Status2</option>
-                                <option>Status3</option>
-                                <option>Status4</option>
+                              <select class="form-control" name="EntryStatus">
+                                <option value="Status1">Status1</option>
+                                <option value="Status2">Status2</option>
+                                <option value="Status3">Status3</option>
+                                <option value="Status4">Status4</option>
                               </select>
                             </div>
                           </div>
@@ -397,7 +399,7 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">ID NO</label>
                             <div class="col-sm-6">
-                              <input type="text" class="form-control" />
+                              <input type="text" class="form-control" name="IDNO" />
                             </div>
                           </div>
                         </div>
@@ -405,11 +407,11 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Positsion</label>
                             <div class="col-sm-6">
-                              <select class="form-control">
-                                <option>Positsion1</option>
-                                <option>Positsion2</option>
-                                <option>Positsion3</option>
-                                <option>Positsion4</option>
+                              <select class="form-control" name="Positsion">
+                                <option value="Positsion1">Positsion1</option>
+                                <option value="Positsion2">Positsion2</option>
+                                <option value="Positsion3">Positsion3</option>
+                                <option value="Positsion4">Positsion4</option>
                               </select>
                             </div>
                           </div>
@@ -420,7 +422,7 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Phone</label>
                             <div class="col-sm-6">
-                              <input type="text" class="form-control" />
+                              <input type="text" class="form-control" name="tell" />
                             </div>
                           </div>
                         </div>
@@ -428,27 +430,27 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Staff Type</label>
                             <div class="col-sm-6">
-                              <select class="form-control">
-                                <option>Type1</option>
-                                <option>Type2</option>
-                                <option>Type3</option>
-                                <option>Type4</option>
+                              <select class="form-control" name="StaffType">
+                                <option value="Type1">Type1</option>
+                                <option value="Type2">Type2</option>
+                                <option value="Type3">Type3</option>
+                                <option value="Type4">Type4</option>
                               </select>
                             </div>
                           </div>
                         </div>
                       </div>
                       <div class="row">
-                       
+
                         <div class="col-md-6">
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Degree</label>
                             <div class="col-sm-6">
-                              <select class="form-control">
-                                <option>Degree1</option>
-                                <option>Degree2</option>
-                                <option>Degree3</option>
-                                <option>Degree4</option>
+                              <select class="form-control" name="Degree">
+                                <option value="Degree1">Degree1</option>
+                                <option value="Degree2">Degree2</option>
+                                <option value="Degree3">Degree3</option>
+                                <option value="Degree4">Degree4</option>
                               </select>
                             </div>
                           </div>
@@ -469,7 +471,7 @@
                           <div class="form-group row d-flex">
                             <label class="col-sm-2 col-form-label">Address</label>
                             <div class="col-sm-10">
-                              <input type="text" class="form-control" />
+                              <input type="text" class="form-control" name="Address" />
                             </div>
                           </div>
                         </div>
@@ -486,7 +488,7 @@
                       <div class="card-body align-self-center">
                         <div class="form-group">
                           <div class="custom-file">
-                            <input type="file" id="customFile" class="custom-file-input form-control-sm">
+                            <input type="file" id="customFile" class="custom-file-input form-control-sm" name="Photo">
                             <label class="custom-file-label col-form-label-sm" for="custmFile">Choose Photo</label>
                           </div>
                         </div>
