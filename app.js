@@ -47,8 +47,17 @@ app.get('/smartrules', urlencodedParser, function (req, res) {
   res.render('smartrules')
 
 })
+app.get('/addtable-first', urlencodedParser, function (req, res) {
 
+  res.render('addtable-first')
 
+})
+
+app.get('/addwidgets', urlencodedParser, function (req, res) {
+
+  res.render('addwidgets')
+
+})
  
  app.listen(port, () => {
    console.log(`Example app listening at http://localhost:${port}`)

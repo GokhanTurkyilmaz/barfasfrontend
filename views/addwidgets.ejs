@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>RoyalUI Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="vendors/base/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <!-- endinject -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+
+    <link rel="shortcut icon" href="images/favicon.png" />
+
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="container-scroller">
+        <!-- partial:partials/_navbar.html -->
+        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="images/logo.svg" class="mr-2"
+                        alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg"
+                        alt="logo" /></a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="ti-view-list"></span>
+                </button>
+                <ul class="navbar-nav mr-lg-2">
+                    <li class="nav-item nav-search d-none d-lg-block">
+                        <div class="input-group">
+                            <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
+                                <span class="input-group-text" id="search">
+                                    <i class="ti-search"></i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now"
+                                aria-label="search" aria-describedby="search">
+                        </div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item dropdown mr-1">
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle " type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Modules
+                            </button>
+                            <div class="dropdown-menu navbar-dropdown " style="margin-top: -13px;"
+                                aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#"
+                            data-toggle="dropdown">
+                            <i class="ti-bell mx-0"></i>
+                            <span class="count"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
+                            aria-labelledby="notificationDropdown">
+                            <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
+                            <a class="dropdown-item">
+                                <div class="item-thumbnail">
+                                    <div class="item-icon bg-success">
+                                        <i class="ti-info-alt mx-0"></i>
+                                    </div>
+                                </div>
+                                <div class="item-content">
+                                    <h6 class="font-weight-normal">Application Error</h6>
+                                    <p class="font-weight-light small-text mb-0 text-muted">
+                                        Just now
+                                    </p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item">
+                                <div class="item-thumbnail">
+                                    <div class="item-icon bg-warning">
+                                        <i class="ti-settings mx-0"></i>
+                                    </div>
+                                </div>
+                                <div class="item-content">
+                                    <h6 class="font-weight-normal">Settings</h6>
+                                    <p class="font-weight-light small-text mb-0 text-muted">
+                                        Private message
+                                    </p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item">
+                                <div class="item-thumbnail">
+                                    <div class="item-icon bg-info">
+                                        <i class="ti-user mx-0"></i>
+                                    </div>
+                                </div>
+                                <div class="item-content">
+                                    <h6 class="font-weight-normal">New user registration</h6>
+                                    <p class="font-weight-light small-text mb-0 text-muted">
+                                        2 days ago
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item nav-profile dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+                            <img src="images/faces/face28.jpg" alt="profile" />
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
+                            aria-labelledby="profileDropdown">
+                            <a class="dropdown-item">
+                                <i class="ti-user text-primary"></i>
+                                Profile Settings
+                            </a>
+                            <a class="dropdown-item">
+                                <i class="ti-settings text-primary"></i>
+                                General Settings
+                            </a>
+                            <a class="dropdown-item">
+                                <i class="ti-mobile text-primary"></i>
+                                My Devicies
+                            </a>
+                            <a class="dropdown-item">
+                                <i class="ti-money text-primary"></i>
+                                Financial Account
+                            </a>
+                            <a class="dropdown-item">
+                                <i class="ti-support text-primary"></i>
+                                Support
+                            </a>
+                            <a class="dropdown-item">
+                                <i class="ti-shopping-cart text-primary"></i>
+                                Shop
+                            </a>
+                            <a class="dropdown-item">
+                                <i class="ti-power-off text-primary"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+                    data-toggle="offcanvas">
+                    <span class="ti-view-list"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:partials/_sidebar.html -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/mainpage">
+                            <i class="ti-pie-chart menu-icon"></i>
+                            <span class="menu-title">Mainpage</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="ti-plus menu-icon"></i>
+                            <span class="menu-title">Add</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="/adddevice">Device
+                                        Add</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="/addperson">Person Add</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-Tables" aria-expanded="false"
+                            aria-controls="ui-Tables">
+                            <i class="ti-layout-tab-window menu-icon"></i>
+                            <span class="menu-title">My Tables</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-Tables">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="/addtable-first">Setted
+                                        Table 1</a></li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="pages/ui-features/typography.html">Setted Table 2</a>
+                                </li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="pages/ui-features/typography.html">Setted Table 3</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-Widgets" aria-expanded="false"
+                            aria-controls="ui-Widgets">
+                            <i class="ti-widgetized menu-icon"></i>
+                            <span class="menu-title">Widgets</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-Widgets">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="/addwidgets">Setted
+                                        Widget 1</a></li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="pages/ui-features/typography.html">Setted Widget 2</a>
+                                </li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="pages/ui-features/typography.html">Setted Widget 3</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+
+                </ul>
+            </nav>
+            
+
+            
+            <div class="main-panel">
+                
+                <div class="content-wrapper">
+                    
+                    <div class="row">
+                        
+                        <!-- Table -->
+                        <div class="col-lg-12 stretch-card">
+
+                            <div class="card">
+                                <div class="wrapper d-flex align-items-stretch">
+                                   
+                                <div class="card-body">
+
+                           
+                                   
+                    </div>
+                    <span class="d-flex justify-content-end">
+                        <nav id="sidebar-right" class="order-last-sidebar active" class="img" style="background-color: whitesmoke;">
+                            <div class="custom-menu">
+                                <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                        </button>
+                    </div>
+                    <div class="">
+                              <h1><a href="index.html" class="logo">Kenitic <span>Blog Agency</span></a></h1>
+                        <ul class="list-unstyled components mb-5">
+                          <li class="active">
+                            <a href="#"><span class="fa fa-home mr-3"></span> Home</a>
+                          </li>
+                          <li>
+                              <a href="#"><span class="fa fa-user mr-3"></span> About</a>
+                          </li>
+                          <li>
+                          <a href="#"><span class="fa fa-sticky-note mr-3"></span> Blog</a>
+                          </li>
+                          <li>
+                          <a href="#"><span class="fa fa-cogs mr-3"></span> Services</a>
+                          </li>
+                          <li>
+                          <a href="#"><span class="fa fa-paper-plane mr-3"></span> Contacts</a>
+                          </li>
+                        </ul>
+                    
+                        <div class="mb-5 px-4">
+                                    <h3 class="h6 mb-3">Subscribe for newsletter</h3>
+                                    <form action="#" class="subscribe-form">
+                            <div class="form-group d-flex">
+                                <div class="icon"><span class="icon-paper-plane"></span></div>
+                              <input type="text" class="form-control" placeholder="Enter Email Address">
+                            </div>
+                          </form>
+                                </div>
+                    
+                        <div class="footer px-4">
+                            <p>
+                                      Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+                                    </p>
+                        </div>
+                    
+                      </div>
+                    
+                    </nav></span>
+                </div>
+             
+        
+                
+            </div>
+            
+        </div>
+        <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021
+                    <a href="https://barfas.com/" target="_blank">BARFAS</a>. Tüm hakkı saklıdır.</span>
+                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">PassBy <i
+                        class="ti-heart text-danger ml-1"></i></span>
+            </div>
+        </footer>
+    </div>
+ 
+
+    </div>
+    
+
+    </div>
+    <!-- content-wrapper ends -->
+    <!-- partial:partials/_footer.html -->
+
+    <!-- partial -->
+    </div>
+    <!-- main-panel ends -->
+    </div>
+
+
+    <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+
+    <!-- plugins:js -->
+    <script src="vendors/base/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <script src="vendors/chart.js/Chart.min.js"></script>
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    <script src="js/off-canvas.js"></script>
+    <script src="js/hoverable-collapse.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Table Template JS  -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+   
+    <!-- Table Template JS  -->
+
+    <!-- Custom js for this page-->
+    <script src="js/dashboard.js"></script>
+    <!-- End custom js for this page-->
+</body>
+
+</html>
