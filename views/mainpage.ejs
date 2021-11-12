@@ -176,9 +176,12 @@
             </a>
             <div class="collapse" id="ui-Tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="addtable-first">Setted Table 1</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Setted Table 2</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Setted Table 3</a></li>
+
+
+                <% for(var i=0; i < data1.length; i++) { %>
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html"><%=data1[i].Tabblename%></a></li>
+                <% } %>
+
               </ul>
             </div>
           </li>
@@ -208,49 +211,52 @@
             <div class="col-md-12 grid-margin">
               <div class="d-flex justify-content-between align-items-center">
                 <div>
-                  <h4 class="font-weight-bold mb-0">Gate Managment</h4>
+                  <h4 class="font-weight-bold mb-0">Gate Managment - <%=data2.length %> Gate</h4>
                 </div>
                 
               </div>
             </div>
           </div>
           <div class="row">
+            <!-- partial  Gate Manegment -->
+            <%
+            function changev(data){
+              const oktext = "Active";
+              const notext = "Inactive";
+              if (data === "true"){
+                return oktext;
+              }else{
+                return notext;
+              }
+            }
+            %>
+            <%
+            function changecolor(data){
+              const oktext = "text-success";
+              const notext = "text-danger";
+              if (data === "true"){
+                return oktext;
+              }else{
+                return notext;
+              }
+            }
+            %>
+            <% for(var i=0; i < data2.length; i++) { %>
             <div class="col-md-4 grid-margin  stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <p class="card-title text-md-center text-xl-left">Sales</p>
+                  <p class="card-title text-md-center text-xl-left">Device name :  <%=data2[i].DeviceName %></p>
                   <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                    <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">34040</h3>
+                    <h5 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">Device Model : <%=data2[i].Model %></h5>
                     <i class="ti-calendar icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                   </div>  
-                  <p class="mb-0 mt-2 text-danger">0.12% <span class="text-black ml-1"><small>(30 days)</small></span></p>
+                  <p class="mb-0 mt-2 <%=changecolor(data2[i].status) %>"><%=changev(data2[i].status) %><span class="text-black ml-1"><small>SN: <%=data2[i].SN %></small></span></p>
                 </div>
               </div>
             </div>
-            <div class="col-md-4 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <p class="card-title text-md-center text-xl-left">Revenue</p>
-                  <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                    <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">47033</h3>
-                    <i class="ti-user icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
-                  </div>  
-                  <p class="mb-0 mt-2 text-danger">0.47% <span class="text-black ml-1"><small>(30 days)</small></span></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <p class="card-title text-md-center text-xl-left">Downloads</p>
-                  <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                    <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">40016</h3>
-                    <i class="ti-agenda icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
-                  </div>  
-                  <p class="mb-0 mt-2 text-success">64.00%<span class="text-black ml-1"><small>(30 days)</small></span></p>
-                </div>
-              </div>
-            </div>
+            <% } %>
+           <!-- partial  Gate Manegment -->
+
         </div>
         <footer class="footer"></footer>
 

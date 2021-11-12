@@ -232,7 +232,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Device Add Screen</h4>
-                                <form class="form-sample">
+                                <form class="form-sample" action="/add/device" method="post">
                                     <p class="card-description">
                                         Device info
                                     </p>
@@ -248,7 +248,7 @@
                                                         <div class="col-sm-10">
                                                             <input type="text" class="form-control"
                                                                 id="validationTooltip01" placeholder="Serial No"
-                                                                required />
+                                                                required name="SN" />
                                                             <div class="invalid-feedback">
                                                                 Please provide a valid User ID.
                                                             </div>
@@ -261,11 +261,11 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Type</label>
                                                         <div class="col-sm-10">
-                                                            <select class="form-control">
-                                                                <option>Type1</option>
-                                                                <option>Type2</option>
-                                                                <option>Type3</option>
-                                                                <option>Type4</option>
+                                                            <select class="form-control" name="Type">
+                                                                <option value="Type1">Type1</option>
+                                                                <option value="Type2">Type2</option>
+                                                                <option value="Type3">Type3</option>
+                                                                <option value="Type4">Type4</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -278,12 +278,15 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Model</label>
                                                         <div class="col-sm-10">
-                                                            <select class="form-control">
-                                                                <option>Model1</option>
-                                                                <option>Model2</option>
-                                                                <option>Model3</option>
-                                                                <option>Model4</option>
+
                                                             </select>
+                                               <input type="text" class="form-control"
+                                                                id="validationTooltip01" placeholder="Model"
+                                                                required  name="Model"/>
+                                                            <div class="invalid-feedback">
+                                                                Please provide a valid User ID.
+                                                            </div>
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -307,7 +310,7 @@
                                                         <div class="col-sm-10">
                                                             <input type="text" class="form-control"
                                                                 id="validationTooltip01" placeholder="Device Name"
-                                                                required />
+                                                                required  name="DeviceName"/>
                                                             <div class="invalid-feedback">
                                                                 Please provide a valid User ID.
                                                             </div>
@@ -320,11 +323,11 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Select Item</label>
                                                         <div class="col-sm-10">
-                                                            <select class="form-control">
-                                                                <option>Item1</option>
-                                                                <option>Item2</option>
-                                                                <option>Item3</option>
-                                                                <option>Item4</option>
+                                                            <select class="form-control" name="Department">
+                                                                <option value="Item1">Item1</option>
+                                                                <option value="Item2">Item2</option>
+                                                                <option value="Item3">Item3</option>
+                                                                <option value="Item4">Item4</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -353,7 +356,7 @@
                                                         <div class="col-sm-10">
                                                             <input type="text" class="form-control"
                                                                 id="validationTooltip01" placeholder="Device IP"
-                                                                required />
+                                                                required  name="DeviceIP"/>
                                                             <div class="invalid-feedback">
                                                                 Please provide a valid User ID.
                                                             </div>
@@ -367,11 +370,11 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Device Admin</label>
                                                         <div class="col-sm-10">
-                                                            <select class="form-control">
-                                                                <option>Admin1</option>
-                                                                <option>Admin2</option>
-                                                                <option>Admin3</option>
-                                                                <option>Admin4</option>
+                                                            <select class="form-control" name="DeviceAdmin">
+                                                                <option value="Admin1">Admin1</option>
+                                                                <option value="Admin1">Admin2</option>
+                                                                <option value="Admin1">Admin3</option>
+                                                                <option value="Admin1">Admin4</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -383,11 +386,11 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Device Super User</label>
                                                         <div class="col-sm-10">
-                                                            <select class="form-control">
-                                                                <option>SuperUser1</option>
-                                                                <option>SuperUser2</option>
-                                                                <option>SuperUser3</option>
-                                                                <option>SuperUser4</option>
+                                                            <select class="form-control" name="DeviceSuperUser">
+                                                                <option value="SuperUser1">SuperUser1</option>
+                                                                <option value="SuperUser2">SuperUser2</option>
+                                                                <option value="SuperUser3">SuperUser3</option>
+                                                                <option value="SuperUser4">SuperUser4</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -402,7 +405,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Remark</label>
                                                         <div class="col-sm-10">
-                                                            <input type="text" class="form-control" />
+                                                            <input type="text" class="form-control"  name="Remark"/>
                                                         </div>
                                                     </div>
                                                 </div>
