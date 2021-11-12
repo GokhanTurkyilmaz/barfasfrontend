@@ -16,7 +16,8 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <!-- <link rel="stylesheet" href="fonts/icomoon/style.css"> -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
     <link rel="stylesheet" href="css/owl.carousel.min.css">
 
@@ -60,18 +61,16 @@
                 <ul class="navbar-nav navbar-nav-right">
                     <li class="nav-item dropdown mr-1">
                         <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle " type="button" id="dropdownMenuButton"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                Modules
-                            </button>
-                            <div class="dropdown-menu navbar-dropdown " style="margin-top: -13px;"
-                                aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
+                          <button class="btn btn-primary dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Modules
+                          </button>
+                          <div class="dropdown-menu navbar-dropdown " style="margin-top: -13px;" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                          </div>
                         </div>
-                    </li>
+                      </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#"
                             data-toggle="dropdown">
@@ -240,9 +239,18 @@
 
             
             <div class="main-panel">
-                
+                <!-- Button alan -->
                 <div class="content-wrapper">
-                    
+
+                    <button class="navbar navbar-toggler ml-auto p-2 bd-highlight navbar-toggler align-self-center" id="sidebarToggle" type="button" data-toggle="sidebarToggle">
+                        <span class="ti-view-list"></span>
+                    </button>
+                    <!-- <div class="navbar">
+                    <div class="ml-auto p-2 bd-highlight">
+                        <button class="btn btn-primary " id="sidebarToggle">Toggle Menu</button>
+                    </div>
+                </div>
+                     -->
                     <div class="row">
                         
                         <!-- Table -->
@@ -258,6 +266,7 @@
                                    
 
                                     <div class="content ">
+                                        
 
                                         <div class="container col-lg-12">
 
@@ -334,7 +343,7 @@
                                     </table>
 
 
-                                </div>
+                                
                                 <div class="row justify-content-end mr-0 mt-2 mb-2" >
                                     <button class="btn btn-primary justify-content-end mr-2">Add Column</button>
                                     <button class="btn btn-primary justify-content-end">Settings</button>
@@ -488,6 +497,7 @@
                                 </div>
 
                             </div>
+                        </div>
                             <!-- Table End -->
 
                            
@@ -498,58 +508,37 @@
                             <button class="btn btn-success justify-content-end">Save</button>
 
                              </div>     
+                             
                     </div>
-                    <span class="d-flex justify-content-end">
-                        <nav id="sidebar-right" class="order-last-sidebar active" class="img" style="background-color: whitesmoke;">
-                            <div class="custom-menu">
-                                <button type="button" id="sidebarCollapse" class="btn btn-primary">
-                        </button>
-                    </div>
-                    <div class="">
-                              <h1><a href="index.html" class="logo">Kenitic <span>Blog Agency</span></a></h1>
-                        <ul class="list-unstyled components mb-5">
-                          <li class="active">
-                            <a href="#"><span class="fa fa-home mr-3"></span> Home</a>
-                          </li>
-                          <li>
-                              <a href="#"><span class="fa fa-user mr-3"></span> About</a>
-                          </li>
-                          <li>
-                          <a href="#"><span class="fa fa-sticky-note mr-3"></span> Blog</a>
-                          </li>
-                          <li>
-                          <a href="#"><span class="fa fa-cogs mr-3"></span> Services</a>
-                          </li>
-                          <li>
-                          <a href="#"><span class="fa fa-paper-plane mr-3"></span> Contacts</a>
-                          </li>
-                        </ul>
                     
-                        <div class="mb-5 px-4">
-                                    <h3 class="h6 mb-3">Subscribe for newsletter</h3>
-                                    <form action="#" class="subscribe-form">
-                            <div class="form-group d-flex">
-                                <div class="icon"><span class="icon-paper-plane"></span></div>
-                              <input type="text" class="form-control" placeholder="Enter Email Address">
-                            </div>
-                          </form>
-                                </div>
-                    
-                        <div class="footer px-4">
-                            <p>
-                                      Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
-                                    </p>
-                        </div>
-                    
-                      </div>
-                    
-                    </nav></span>
-                </div>
-             
-        
                 
+              
+                   
+             
             </div>
-            
+
+         
+        
+                </div>
+                
+            <!-- Sidebar-->
+                <div class="navbar d-flex bd-highlight">
+                    <div>
+                       
+                <div class="p-2 bd-highlight " id="sidebar-wrapper">
+                    <div class="list-group list-group-flush">
+                        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Dashboard</a>
+                        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Shortcuts</a>
+                        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Overview</a>
+                        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Events</a>
+                        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
+                        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+                    
+           
         </div>
         <footer class="footer">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
@@ -567,6 +556,7 @@
 
 
     </div>
+    
     <!-- content-wrapper ends -->
     <!-- partial:partials/_footer.html -->
 
@@ -581,23 +571,38 @@
     <!-- container-scroller -->
 
     <!-- plugins:js -->
-    <script src="vendors/base/vendor.bundle.base.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page-->
-    <script src="vendors/chart.js/Chart.min.js"></script>
-    <!-- End plugin js for this page-->
-    <!-- inject:js -->
+  <script src="vendors/base/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <script src="vendors/chart.js/Chart.min.js"></script>
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
     <script src="js/off-canvas.js"></script>
-    <script src="js/hoverable-collapse.js"></script>
-    <script src="js/template.js"></script>
-    <script src="js/todolist.js"></script>
+  <script src="js/hoverable-collapse.js"></script>
+  <script src="js/template.js"></script>
+  <script src="js/todolist.js"></script>
     <!-- endinject -->
     <!-- Table Template JS  -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <!-- <script src="js/bootstrap.min.js"></script> -->
     <script src="js/main.js"></script>
-   
+   <script>
+          // Toggle the side navigation
+    const sidebarToggle = document.body.querySelector('#sidebarToggle');
+    if (sidebarToggle) {
+        // Uncomment Below to persist sidebar toggle between refreshes
+        // if (localStorage.getItem('sb|sidebar-toggle') === 'true') {
+        //     document.body.classList.toggle('sb-sidenav-toggled');
+        // }
+        sidebarToggle.addEventListener('click', event => {
+            document.body.classList.toggle('sd-active');
+        });
+    }
+
+    
+
+   </script>
     <!-- Table Template JS  -->
 
     <!-- Custom js for this page-->
