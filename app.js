@@ -67,6 +67,34 @@ app.get('/smartrules', urlencodedParser, function (req, res) {
   res.render('smartrules')
 
 })
+app.get('/addtable-first', urlencodedParser, function (req, res) {
+
+
+  res.render('addtable-first')
+
+})
+
+app.get('/addwidgets', urlencodedParser, function (req, res) {
+
+  res.render('addwidgets')
+
+})
+app.get('/adddepartment', urlencodedParser, function (req, res) {
+
+  res.render('adddepartment')
+
+})
+app.get('/login', urlencodedParser, function (req, res) {
+
+  res.render('login')
+
+})
+app.get('/Register', urlencodedParser, function (req, res) {
+
+  res.render('Register')
+
+})
+ 
 
 /**
  * Actions
@@ -175,6 +203,7 @@ axios(config)
       console.log(error);
     });
       })
+
  app.listen(port, () => {
  console.log(`Example app listening at http://localhost:${port}`)
  // const PORT = process.env.PORT || 3000;
