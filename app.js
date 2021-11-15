@@ -79,6 +79,21 @@ app.get('/addwidgets', urlencodedParser, function (req, res) {
   res.render('addwidgets')
 
 })
+app.get('/adddepartment', urlencodedParser, function (req, res) {
+
+  res.render('adddepartment')
+
+})
+app.get('/login', urlencodedParser, function (req, res) {
+
+  res.render('login')
+
+})
+app.get('/Register', urlencodedParser, function (req, res) {
+
+  res.render('Register')
+
+})
  
 
 /**
