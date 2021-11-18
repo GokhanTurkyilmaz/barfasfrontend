@@ -1,4 +1,4 @@
-nodemon/**
+/**
  * @description buxom app company :
  * Server 
  */
@@ -9,7 +9,10 @@ nodemon/**
  var pach = require('path')
  var apis = require('./api_module')
  app.set("view engine", "ejs")
+ 
+ app.set('services', 'public/services');
  var cookieParser = require('cookie-parser')
+const { json } = require('body-parser')
  const port = 5000
  app.use(cookieParser())
  app.use(express.static('public'))
@@ -17,7 +20,6 @@ nodemon/**
  app.use('/images',express.static(__dirname + 'public/images'))
  app.use('/js',express.static(__dirname + 'public/js'))
  app.use('/vendors',express.static(__dirname + 'public/vendors'))
-
  
  var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
@@ -84,11 +86,40 @@ app.get('/adddepartment', urlencodedParser, function (req, res) {
   res.render('adddepartment')
 
 })
-app.get('/login', urlencodedParser, function (req, res) {
 
-  res.render('login')
-
+app.post('/login/loginPost', urlencodedParser, function (req, res) {
+  
+  
+  var data = JSON.stringify({
+    "EmailAddress": req.body.userName,
+    "Password": req.body.password
+  });
+  
+  var config = {
+    method: 'post',
+    url: 'https://barfas.iran.liara.run/login/',
+    headers: { 
+      'Content-Type': 'application/json'
+    },
+    data : data
+  };
+  debugger;
+  axios(config)
+  .then(function (res) {
+    console.log(JSON.stringify(res.data));
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+  res.render('Index')
 })
+
+ app.get('/login', urlencodedParser, function (req, res) {
+  debugger;
+   res.render('login')
+
+ })
+
 app.get('/Register', urlencodedParser, function (req, res) {
 
   res.render('Register')
@@ -120,8 +151,8 @@ var data = JSON.stringify({
 
 var config = {
   method: 'post',
- ////url: 'https://barfas-server.herokuapp.com/insert/device',
-  url: 'http://localhost:3000/insert/device',
+  url: 'https://barfas.iran.liara.run/login/',
+ // url: 'http://localhost:3000/insert/device',
   headers: { 
     'Content-Type': 'application/json'
   },
@@ -142,6 +173,8 @@ axios(config)
   console.log(error);
 });
   })
+
+
  /**
   * add personnel 
   */
