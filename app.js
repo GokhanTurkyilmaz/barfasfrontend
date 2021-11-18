@@ -9,6 +9,7 @@
  var pach = require('path')
  var apis = require('./api_module')
  app.set("view engine", "ejs")
+ app.set('views', __dirname+'/views/pages')
  var cookieParser = require('cookie-parser')
  const port = 5000
  app.use(cookieParser())
@@ -135,7 +136,7 @@ var data = JSON.stringify({
 var config = {
   method: 'post',
  ////url: 'https://barfas-server.herokuapp.com/insert/device',
-  url: 'http://localhost:3000/insert/device',
+  url: 'https://barfas.iran.liara.run/insert/device',
   headers: { 
     'Content-Type': 'application/json'
   },
@@ -196,7 +197,7 @@ axios(config)
     var config = {
       method: 'post',
      /// url: 'https://barfas-server.herokuapp.com/insert/personnel',
-     url: 'http://localhost:3000/insert/personnel',
+     url: 'https://barfas.iran.liara.run/insert/personnel',
       headers: { 
         'Content-Type': 'application/json'
       },
