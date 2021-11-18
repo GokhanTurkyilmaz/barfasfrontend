@@ -9,7 +9,6 @@
  var pach = require('path')
  var apis = require('./api_module')
  app.set("view engine", "ejs")
- app.set('views', __dirname+'/views/pages')
  var cookieParser = require('cookie-parser')
  const port = 5000
  app.use(cookieParser())
