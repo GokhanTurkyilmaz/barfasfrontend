@@ -52,6 +52,19 @@ $(function() {
 
 
 
+// Add active class to the current Sidebar Nav-item (highlight it)
+var sidebar = document.getElementById("sidebarItems");
+const listElement = sidebar.getElementsByClassName("nav-item");
+for (var i = 0; i < listElement.length; i++) {
+  listElement[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+
+
+
 
 
  

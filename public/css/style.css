@@ -3228,6 +3228,7 @@
   }
 }
 
+
 @-moz-keyframes bounceInUp {
   0% {
     opacity: 0;
@@ -8890,6 +8891,8 @@ input[type="datetime-local"],
 input[type="month"] {
   -webkit-appearance: listbox;
 }
+
+
 
 textarea {
   overflow: auto;
@@ -21542,6 +21545,13 @@ dl li {
   background-color: darkgrey;
   outline: 1px solid slategrey;
 }
+.dot {display:inline-block; width:10px; height:10px; background-color:rgba(255,255,255,.3); border-radius:10px; z-index:999; content:''; color:transparent; font-size:14px; line-height:10px; vertical-align:middle; margin:5px 0 5px 0; font-weight:300;}
+.dot:hover {background-color:rgba(255,255,255,.8); color:rgba(255,255,155,.8);}
+.dot span {margin:0px 0px 20px 15px; position:relative; top:0px; left:-80px;}
+.navdot {width:100px; height:200px;/*background-color:rgb(240,240,240); border:solid 1px rgb(220,220,220);*/ padding:0 0px; position:fixed; top:50%; right:20px; transform: translate(0, -50%); z-index: 10000; text-align:right;}
+.navdot ul li a {text-decoration:none;}
+.navdot ul {list-style-type:none; margin:0; padding:0;}
+.name-active {color:rgba(255,255,255,.8); background-color:#FFD95F; text-align:right;} 
 
 #sidebar-right {
   
@@ -21748,11 +21758,9 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
   }
 }
 
-@media (max-width: 991.98px) {
-  #sidebarCollapse span {
-    display: none; } }
 
-    
+
+
       
 /* Sidebar ride  end  */
 /*# sourceMappingURL=maps/style.css.map */

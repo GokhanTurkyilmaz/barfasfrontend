@@ -94,7 +94,21 @@ app.get('/Register', urlencodedParser, function (req, res) {
   res.render('Register')
 
 })
- 
+app.get('/settings', urlencodedParser, function (req, res) {
+
+  res.render('settings')
+
+})
+app.get('/settings-test', urlencodedParser, function (req, res) {
+
+  res.render('settings-test')
+
+})
+app.get('/profile', urlencodedParser, function (req, res) {
+
+  res.render('profile')
+
+})
 
 /**
  * Actions
