@@ -22,23 +22,27 @@ const { json } = require('body-parser')
  app.use('/vendors',express.static(__dirname + 'public/vendors'))
  
  var urlencodedParser = bodyParser.urlencoded({ extended: false })
-
+ app.get('/', urlencodedParser, function (req, res) {
+  if (req.cookies.Abarxqza2 != null){
+   res.render('index')
+  }
+})
 
  app.get('/admin', urlencodedParser, function (req, res) {
-
-     res.render('index')
-   
+   if (req.cookies.Abarxqza2 != null){
+    res.render('index')
+   }
  })
  app.get('/mainpage', urlencodedParser, function (req, res) {
-  apis.show_mydevice("61879efcfb37724ae80c6db8")
+  apis.show_mydevice(req.cookies.Abarxqza2)
   setTimeout(function(){
-    apis.show_tabble("61879efcfb37724ae80c6db8")
+    apis.show_tabble(req.cookies.Abarxqza2)
     const tabblelist =  apis.tabblelist
     const mydevicelist =  apis.mydevicelist
     if(tabblelist != null && mydevicelist != null){
       res.render('mainpage',{data1:tabblelist,data2:mydevicelist})
     }else{
-      res.json("data is looding ..")
+      res.redirect('/mainpage')
     }
   },1000)
 
@@ -47,7 +51,7 @@ const { json } = require('body-parser')
 })
 
 app.get('/addperson', urlencodedParser, function (req, res) {
-  apis.show_department("61879efcfb37724ae80c6db8")
+  apis.show_department(req.cookies.Abarxqza2)
   setTimeout(function(){
     const answer =  apis.departmenlist
     if(answer != null){
@@ -86,32 +90,35 @@ app.get('/adddepartment', urlencodedParser, function (req, res) {
   res.render('adddepartment')
 
 })
+app.get('/profile', urlencodedParser, function (req, res) {
+  apis.Profile(req.cookies.Abarxqza2)
+  setTimeout(function(){
+    if(apis.profileitems != null && req.cookies.Abarxqza2 != null){
+      res.render('profile',{myprofile:apis.profileitems})
+    }
+    else{
+      res.redirect('/profile')
+    }
+
+  },120)
+
+  
+
+})
 
 app.post('/login/loginPost', urlencodedParser, function (req, res) {
+    apis.Login_main(req.body.userName,req.body.password)
+    setTimeout(function(){
+      if (apis.loginitems != null && apis.loginitems.Status === true){
+        res.cookie('Abarxqza2',apis.loginitems.Yourtoken)
+        res.redirect('/admin')
+      }else{
+        res.send("you are not user")
+      }
+    },120)
+
   
   
-  var data = JSON.stringify({
-    "EmailAddress": req.body.userName,
-    "Password": req.body.password
-  });
-  
-  var config = {
-    method: 'post',
-    url: 'https://barfas.iran.liara.run/login/',
-    headers: { 
-      'Content-Type': 'application/json'
-    },
-    data : data
-  };
-  debugger;
-  axios(config)
-  .then(function (res) {
-    console.log(JSON.stringify(res.data));
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-  res.render('Index')
 })
 
  app.get('/login', urlencodedParser, function (req, res) {

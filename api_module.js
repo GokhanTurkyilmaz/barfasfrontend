@@ -3,15 +3,14 @@
  */
 var axios = require('axios');
 
-function show_tabble(id){
+function show_tabble(token){
 var data = JSON.stringify({
-  "id": ""+id+""
+  "Yourtoken": token
 });
 
 var config = {
   method: 'post',
- ///url: 'https://barfas-server.herokuapp.com/tabbleslist',
-  url: 'http://localhost:3000/tabbleslist',
+  url: 'https://barfas.iran.liara.run/tabbleslist',
   headers: { 
     'Content-Type': 'application/json'
   },
@@ -31,16 +30,15 @@ axios(config)
 /**
  * show decice with id api
  */
- function show_mydevice(id){
+ function show_mydevice(token){
    
  var data = JSON.stringify({
-   "id": ""+id+""
+   "Yourtoken": token
  });
  
  var config = {
    method: 'post',
-   ///url: 'https://barfas-server.herokuapp.com/finddevicewithid',
-   url: 'http://localhost:3000/finddevicewithid',
+   url: 'https://barfas.iran.liara.run/finddevicewithid',
    headers: { 
      'Content-Type': 'application/json'
    },
@@ -60,16 +58,15 @@ axios(config)
 /**
  * show department list with id
  */
- function show_department(id){
+ function show_department(token){
    
   var data = JSON.stringify({
-    "UserId":  ""+id+""
+    "Yourtoken":  token
   });
   
   var config = {
     method: 'post',
-    ///url: 'https://barfas-server.herokuapp.com/finddepartment',
-    url: 'http://localhost:3000/finddepartment',
+    url: 'https://barfas.iran.liara.run/finddepartment',
     headers: { 
       'Content-Type': 'application/json'
     },
@@ -84,8 +81,68 @@ axios(config)
   .catch(function (error) {
     console.log(error);
   });
+}
+
+/**
+ * login 
+ */
+function Login_main(username,password){
+var data = JSON.stringify({
+  "EmailAddress": username,
+  "Password": password
+});
+
+var config = {
+  method: 'post',
+  url: 'https://barfas.iran.liara.run/login',
+  headers: { 
+    'Content-Type': 'application/json'
+  },
+  data : data
+};
+
+axios(config)
+.then(function (response) {
+ const loginitems = response.data
+ exports.loginitems=loginitems
+})
+.catch(function (error) {
+  console.log(error);
+});
+
+}
+/**
+ * show profile with token
+ */
+function Profile(token){
+  var data = JSON.stringify({
+    "Yourtoken": token
+  });
   
-  }
+  var config = {
+    method: 'post',
+    url: 'https://barfas.iran.liara.run/finduserswithid',
+    headers: { 
+      'Content-Type': 'application/json'
+    },
+    data : data
+  };
+  
+  axios(config)
+  .then(function (response) {
+    const profileitems =  response.data
+    exports.profileitems = profileitems
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+  
+}
+ 
+
 exports.show_tabble=show_tabble
 exports.show_mydevice=show_mydevice
 exports.show_department=show_department
+exports.Login_main=Login_main
+exports.Profile=Profile
+
