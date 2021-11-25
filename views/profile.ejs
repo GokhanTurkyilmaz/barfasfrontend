@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>RoyalUI Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="vendors/base/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+
+    <!-- endinject -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+
+    <link rel="shortcut icon" href="images/favicon.png" />
+
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container-scroller">
+        <!-- partial:partials/_navbar.html -->
+        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="images/logo.svg" class="mr-2"
+                        alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg"
+                        alt="logo" /></a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="ti-view-list"></span>
+                </button>
+                <ul class="navbar-nav mr-lg-2">
+                    <li class="nav-item nav-search d-none d-lg-block">
+                        <div class="input-group">
+                            <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
+                                <span class="input-group-text" id="search">
+                                    <i class="ti-search"></i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now"
+                                aria-label="search" aria-describedby="search">
+                        </div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item dropdown mr-1">
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle " type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Modules
+                            </button>
+                            <div class="dropdown-menu navbar-dropdown " style="margin-top: -13px;"
+                                aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#"
+                            data-toggle="dropdown">
+                            <i class="ti-bell mx-0"></i>
+                            <span class="count"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
+                            aria-labelledby="notificationDropdown">
+                            <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
+                            <a class="dropdown-item">
+                                <div class="item-thumbnail">
+                                    <div class="item-icon bg-success">
+                                        <i class="ti-info-alt mx-0"></i>
+                                    </div>
+                                </div>
+                                <div class="item-content">
+                                    <h6 class="font-weight-normal">Application Error</h6>
+                                    <p class="font-weight-light small-text mb-0 text-muted">
+                                        Just now
+                                    </p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item">
+                                <div class="item-thumbnail">
+                                    <div class="item-icon bg-warning">
+                                        <i class="ti-settings mx-0"></i>
+                                    </div>
+                                </div>
+                                <div class="item-content">
+                                    <h6 class="font-weight-normal">Settings</h6>
+                                    <p class="font-weight-light small-text mb-0 text-muted">
+                                        Private message
+                                    </p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item">
+                                <div class="item-thumbnail">
+                                    <div class="item-icon bg-info">
+                                        <i class="ti-user mx-0"></i>
+                                    </div>
+                                </div>
+                                <div class="item-content">
+                                    <h6 class="font-weight-normal">New user registration</h6>
+                                    <p class="font-weight-light small-text mb-0 text-muted">
+                                        2 days ago
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item nav-profile dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+                            <img src="images/faces/face28.jpg" alt="profile" />
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
+                            aria-labelledby="profileDropdown">
+                            <a class="dropdown-item">
+                                <button type="submit" href="/profile/readProfile" class="ti-user text-primary"></button>
+                                Profile Settings
+                            </a>
+                            <a class="dropdown-item">
+                                <i class="ti-settings text-primary"></i>
+                                General Settings
+                            </a>
+                            <a class="dropdown-item">
+                                <i class="ti-mobile text-primary"></i>
+                                My Devicies
+                            </a>
+                            <a class="dropdown-item">
+                                <i class="ti-money text-primary"></i>
+                                Financial Account
+                            </a>
+                            <a class="dropdown-item">
+                                <i class="ti-support text-primary"></i>
+                                Support
+                            </a>
+                            <a class="dropdown-item">
+                                <i class="ti-shopping-cart text-primary"></i>
+                                Shop
+                            </a>
+                            <a class="dropdown-item">
+                                <i class="ti-power-off text-primary"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+                    data-toggle="offcanvas">
+                    <span class="ti-view-list"></span>
+                </button>
+            </div>
+        </nav>
+
+         <!-- partial -->
+         <div class="container-fluid page-body-wrapper">
+            <!-- partial:partials/_sidebar.html -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav" id="sidebarItems">
+                    <li class="nav-item border-bottom">
+                        <a class="nav-link" href="#general">
+                            <i class="ti-panel menu-icon"></i>
+                            <span class="menu-title">General</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <form action="/form1" method="post">
+                            <button type="submit" href="/profile" class="ti-user text-primary"></button>
+                            Profile Settings
+                        </form>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="ti-lock menu-icon"></i>
+                            <span class="menu-title">Security and Login</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link border-bottom" href="#">
+                            <i class="ti-info menu-icon"></i>
+                            <span class="menu-title">Account Information</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="ti-id-badge menu-icon"></i>
+                            <span class="menu-title">Employee</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="ti-mobile menu-icon"></i>
+                            <span class="menu-title">Device</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link border-bottom" href="#">
+                            <i class="ti-home menu-icon"></i>
+                            <span class="menu-title">Department</span>
+                        </a>
+                    </li>
+                    <li class="nav-item border-bottom">
+                        <a class="nav-link" href="#">
+                            <i class="ti-credit-card menu-icon"></i>
+                            <span class="menu-title">Payment Methods</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#integration-log">
+                            <i class="ti-files menu-icon"></i>
+                            <span class="menu-title">Integration Logs</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link border-bottom" href="#">
+                            <i class="ti-bell menu-icon"></i>
+                            <span class="menu-title">Notifications</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="ti-ticket menu-icon"></i>
+                            <span class="menu-title">Tickets</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="ti-support
+                            menu-icon"></i>
+                            <span class="menu-title">Support</span>
+                        </a>
+                    </li>
+                   
+                   
+
+
+                </ul>
+            </nav>
+
+            <div class="main-panel">
+
+                <div class="content-wrapper">
+
+                    <div class="row">
+
+                        <!-- Table -->
+                        <div class="col-lg-12 stretch-card">
+
+                            <!-- SIDEBAR -->
+                            <div class="card">
+                                <div class="wrapper d-flex align-items-stretch">
+
+                                    <div class="card-body">
+                                        <h4 class="card-title">Horizontal Two column</h4>
+                                        <div class="flex-column flex-lg-row">
+                                            <div class="d-flex col-md-12">
+                                                <!--begin::Nav-->
+                                                <div class="col-md-3"
+                                                    style="justify-content: start;/* position: fixed; */">
+                                                    <!--begin::Card body-->
+                                                    <div class="card card-body py-10 px-6" "="">
+                                                        <!--begin::Menu-->
+                                                        <ul class=" nav nav-flush menu menu-column menu-rounded
+                                                        flex-column menu-title-gray-600 menu-bullet-gray-300
+                                                        menu-state-bg menu-state-bullet-primary font-weight-bold fs-6 mb-2">
+                                                        <li class="menu-item px-3 pt-0 pb-1">
+                                                            <a href="#kt_account_settings_overview"
+                                                                data-kt-scroll-toggle="true"
+                                                                class="menu-link px-3 nav-link active">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-vertical"></span>
+                                                                </span>
+                                                                <span class="menu-title">Overview</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="menu-item px-3 pt-0 pb-1">
+                                                            <a href="#kt_account_settings_signin_method"
+                                                                data-kt-scroll-toggle="true"
+                                                                class="menu-link px-3 nav-link">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-vertical"></span>
+                                                                </span>
+                                                                <span class="menu-title">Sign-in Method</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="menu-item px-3 pt-0 pb-1">
+                                                            <a href="#kt_account_settings_info"
+                                                                data-kt-scroll-toggle="true"
+                                                                class="menu-link px-3 nav-link">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-vertical"></span>
+                                                                </span>
+                                                                <span class="font-weight-bold menu-title">Basic
+                                                                    Information</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="menu-item px-3 pt-0 pb-1">
+                                                            <a href="#kt_account_settings_connected"
+                                                                data-kt-scroll-toggle="true"
+                                                                class="menu-link px-3 nav-link">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-vertical"></span>
+                                                                </span>
+                                                                <span class="menu-title">Connected Accounts</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="menu-item px-3 pt-0">
+                                                            <a href="#kt_account_settings_notifications"
+                                                                data-kt-scroll-toggle="true"
+                                                                class="menu-link px-3 nav-link">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-vertical"></span>
+                                                                </span>
+                                                                <span class="menu-title">Notifications</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="menu-item px-3 pt-0">
+                                                            <a href="#kt_account_settings_deactivate"
+                                                                data-kt-scroll-toggle="true"
+                                                                class="menu-link px-3 nav-link">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-vertical"></span>
+                                                                </span>
+                                                                <span class="menu-title">Deactivate Account</span>
+                                                            </a>
+                                                        </li>
+                                                        </ul>
+                                                        <!--end::Menu-->
+                                                    </div>
+                                                    <!--end::Card body-->
+                                                </div>
+                                                <!--end::Nav-->
+                                                <!-- Start: Form -->
+                                                <div class="flex-column col-lg-9">
+                                                    <form class="card" style="margin-top: 50px;">
+                                                        <div class="card-header">
+                                                            <!--begin::Card title-->
+                                                            <div class="card-title m-0" data-toggle="collapse"
+                                                                data-target="#collapseExample" aria-expanded="false"
+                                                                aria-controls="collapseExample"
+                                                                style="cursor: pointer;">
+                                                                <h3 class="font-weight-bolder m-0">Basic Informations</h3>
+                                                            </div>
+                                                            <!--end::Card title-->
+                                                        </div>
+                                                        <div class="collapse" id="collapseExample">
+                                                            <div class="flex-md-row-fluid col-lg-12">
+                                                                <div class="row mb-3">
+                                                                    <!--begin::Label-->
+                                                                    <label
+                                                                        class="col-lg-4 col-form-label font-weight-bold">Avatar</label>
+                                                                    <!--end::Label-->
+                                                                    <!--begin::Col-->
+                                                                    <div class="col-lg-8">
+                                                                        <!--begin::Image input-->
+                                                                        <div class="image-input image-input-outline"
+                                                                            data-kt-image-input="true">
+                                                                            <!--begin::Preview existing avatar-->
+                                                                            <div class="image-input-wrapper"
+                                                                                style="width: 125px; height: 125px;">
+                                                                            </div>
+                                                                            <!--end::Preview existing avatar-->
+                                                                            <!--begin::Label-->
+                                                                            <label
+                                                                                class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                                                                style="width: 25px; height: 25px;" 
+                                                                                class="bi bi-pencil-fill fs-7">/>
+                                                                                <!--begin::Inputs-->
+                                                                                <input type="file" name="avatar"
+                                                                                    accept=".png, .jpg, .jpeg">
+                                                                                <input type="hidden"
+                                                                                    name="avatar_remove">
+                                                                                <!--end::Inputs-->
+                                                                            </label>
+                                                                            <!--end::Label-->
+                                                                            <!--begin::Cancel-->
+                                                                            <span
+                                                                                class="btn btn-icon btn-circle btn-active-color-primary bg-body shadow"
+                                                                                style="width: 25px; height: 25px;
+                                                                            data-kt-image-input-action=" cancel"
+                                                                                data-bs-toggle="tooltip" title=""
+                                                                                data-bs-original-title="Cancel avatar">
+                                                                                <i class="bi bi-x fs-2"></i>
+                                                                            </span>
+                                                                            <!--end::Cancel-->
+                                                                            <!--begin::Remove-->
+                                                                            <span
+                                                                                class="btn btn-icon btn-circle btn-active-color-primary bg-body shadow"
+                                                                                style="width: 25px; height: 25px;
+                                                                            data-kt-image-input-action=" remove"
+                                                                                data-bs-toggle="tooltip" title=""
+                                                                                data-bs-original-title="Remove avatar">
+                                                                                <i class="bi bi-x fs-2"></i>
+                                                                            </span>
+                                                                            <!--end::Remove-->
+                                                                        </div>
+                                                                        <!--end::Image input-->
+                                                                        <!--begin::Hint-->
+                                                                        <div class="form-text">Allowed file types: png,
+                                                                            jpg,
+                                                                            jpeg.</div>
+                                                                        <!--end::Hint-->
+                                                                    </div>
+                                                                    <!--end::Col-->
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group row">
+                                                                            <label
+                                                                                class="col-sm-3 col-form-label font-weight-bold">Name</label>
+                                                                            <div class="col-sm-9">
+                                                                                <input type="text" class="form-control">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group row">
+                                                                            <label
+                                                                                class="col-sm-3 col-form-label font-weight-bold">Surname</label>
+                                                                            <div class="col-sm-9">
+                                                                                <input class="form-control">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-3">
+                                                                    <label
+                                                                        class="col-lg-4 col-form-label font-weight-bold ">
+                                                                        E-mail</label>
+                                                                    <div class="col-sm-8">
+                                                                        <input type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-3">
+                                                                    <label
+                                                                        class="col-lg-4 col-form-label font-weight-bold ">Contact
+                                                                        Phone</label>
+                                                                    <div class="col-sm-8">
+                                                                        <input type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-3">
+                                                                    <label
+                                                                        class="col-lg-4 col-form-label font-weight-bold ">
+                                                                        Punch PWD</label>
+                                                                    <div class="col-sm-8">
+                                                                        <input type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-3">
+                                                                    <label
+                                                                        class="col-lg-4 col-form-label font-weight-bold ">User
+                                                                        ID</label>
+                                                                    <div class="col-sm-8">
+                                                                        <fieldset disabled>
+                                                                            <input type="text" id="disabledTextInput"
+                                                                                class="form-control"
+                                                                                placeholder="AU29BF378924YTS7" />
+                                                                        </fieldset>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-3">
+                                                                    <label
+                                                                        class="col-lg-4 col-form-label font-weight-bold ">Staff
+                                                                        Code</label>
+                                                                    <div class="col-sm-8">
+                                                                        <fieldset disabled>
+                                                                            <input type="text" id="disabledTextInput"
+                                                                                class="form-control"
+                                                                                placeholder="QE29BH39985RQ778924YTS7" />
+                                                                        </fieldset>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-3">
+                                                                    <label
+                                                                        class="col-sm-4 col-form-label font-weight-bold">Department</label>
+                                                                    <div class="col-sm-8">
+                                                                        <select class="form-control" disabled>
+                                                                            <option>Department1</option>
+                                                                            <option>Department2</option>
+                                                                            <option>Department3</option>
+                                                                            <option>Department4</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-3">
+                                                                    <label
+                                                                        class="col-sm-4 col-form-label font-weight-bold">Positsion</label>
+                                                                    <div class="col-sm-8">
+                                                                        <select class="form-control">
+                                                                            <option>Positsion1</option>
+                                                                            <option>Positsion2</option>
+                                                                            <option>Positsion3</option>
+                                                                            <option>Positsion4</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-3">
+                                                                    <label
+                                                                        class="col-sm-4 col-form-label font-weight-bold">Degree</label>
+                                                                    <div class="col-sm-8">
+                                                                        <select class="form-control">
+                                                                            <option>Degree1</option>
+                                                                            <option>Degree2</option>
+                                                                            <option>Degree3</option>
+                                                                            <option>Degree4</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-3">
+                                                                    <label
+                                                                        class="col-sm-4 col-form-label font-weight-bold">Gender</label>
+                                                                    <div class="col-sm-4">
+                                                                        <div class="form-check">
+                                                                            <label class="form-check-label">
+                                                                                <input type="radio"
+                                                                                    class="form-check-input"
+                                                                                    name="membershipRadios"
+                                                                                    id="membershipRadios1" value=""
+                                                                                    checked="">
+                                                                                Male
+                                                                                <i class="input-helper"></i><i
+                                                                                    class="input-helper"></i></label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-4">
+                                                                        <div class="form-check">
+                                                                            <label class="form-check-label">
+                                                                                <input type="radio"
+                                                                                    class="form-check-input"
+                                                                                    name="membershipRadios"
+                                                                                    id="membershipRadios2"
+                                                                                    value="option2">
+                                                                                Female
+                                                                                <i class="input-helper"></i><i
+                                                                                    class="input-helper"></i></label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-3">
+                                                                    <label
+                                                                        class="col-lg-4 col-form-label font-weight-bold">Entry
+                                                                        Status</label>
+                                                                    <div class="col-sm-8">
+                                                                        <select class="form-control">
+                                                                            <option>Status1</option>
+                                                                            <option>Status2</option>
+                                                                            <option>Status3</option>
+                                                                            <option>Status4</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-3">
+                                                                    <label
+                                                                        class="col-lg-4 col-form-label font-weight-bold ">
+                                                                        Entry date</label>
+                                                                    <div class="col-sm-8">
+                                                                        <input type="text" class="form-control"
+                                                                            placeholder="yy/mm/dd">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-3">
+                                                                    <label
+                                                                        class="col-lg-4 col-form-label font-weight-bold ">
+                                                                        Card No </label>
+                                                                    <div class="col-sm-8">
+                                                                        <fieldset disabled>
+                                                                            <input type="text" id="disabledTextInput"
+                                                                                class="form-control"
+                                                                                placeholder="QE29BH39985RQ778924YTS7" />
+                                                                        </fieldset>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-3">
+                                                                    <label
+                                                                        class="col-lg-4 col-form-label font-weight-bold ">
+                                                                        ID NO</label>
+                                                                    <div class="col-sm-8">
+                                                                        <fieldset disabled>
+                                                                            <input type="text" class="form-control"
+                                                                                placeholder="2305120000534">
+                                                                        </fieldset>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-3">
+                                                                    <label
+                                                                        class="col-sm-3 col-form-label">Address</label>
+                                                                    <div class="col-sm-9 mb-3">
+                                                                        <input type="text"
+                                                                            class="form-control form-control-lg">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-3">
+                                                                    <label
+                                                                        class="col-sm-3 col-form-label">Remark</label>
+                                                                    <div class="col-sm-9 mb-3">
+                                                                        <input type="text"
+                                                                            class="form-control form-control-lg">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 justify-content-end mr-1">
+                                                                    <div class="">
+                                                                        <button type="submit"
+                                                                            class="btn btn-primary">Discard</button>
+                                                                        <button type="submit"
+                                                                            class="btn btn-primary">Save
+                                                                            Changes</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                    <div class="border-bottom"></div>
+                                                    <form class="card" style="margin-top: 50px; ">
+                                                        <div class="card-header">
+                                                            <!--begin::Card title-->
+                                                            <div class="card-title m-0 " data-toggle="collapse"
+                                                                data-target="#collapseExample1" aria-expanded="false"
+                                                                aria-controls="collapseExample1"
+                                                                style="cursor: pointer;">
+                                                                <h3 class="font-weight-bold m-0">Sign-in Method</h3>
+                                                            </div>
+                                                            <!--end::Card title-->
+                                                        </div>
+                                                        <div class="collapse m-3" id="collapseExample1">
+                                                            <div class="flex-md-row-fluid col-lg-12">
+                                                                <div id="MailOriginalContent" class="row mb-3">
+                                                                    <div
+                                                                        class="row col-lg-12 justify-content-sm-between">
+                                                                        <div class="col-lg-6 ">
+                                                                            <label
+                                                                                class="col-form-label font-weight-bold ">Email
+                                                                                Address</label>
+                                                                        </div>
+                                                                        <div class="col-sm-6 my-auto"
+                                                                            style="text-align-last: end;">
+                                                                            <button id="change-email"
+                                                                                onclick="DeleteRow()"
+                                                                                class="btn btn-primary"> Change
+                                                                                email</button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <label
+                                                                        class="col-form-label ml-3 pt-0">info@barfas.com</label>
+                                                                </div>
+                                                                <div id="MailHideContent"
+                                                                    class="card card-body mb-3 d-none">
+                                                                    <div>
+                                                                        <div class="row mb-3 ">
+                                                                            <div class="col-lg-6 mb-3 mb-0">
+                                                                                <div class="row mb-0 ">
+                                                                                    <label for="emailaddress"
+                                                                                        class="form-label font-weight-bold mb-3">Enter
+                                                                                        New Email Address</label>
+                                                                                    <input type="email"
+                                                                                        class="form-control form-control-lg form-control-solid "
+                                                                                        id="emailaddress"
+                                                                                        placeholder="Email Address"
+                                                                                        name="emailaddress"
+                                                                                        value="info@barfas.com">
+                                                                                    <div
+                                                                                        class="fv-plugins-message-container invalid-feedback">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <div
+                                                                                    class="fv-row mb-0 fv-plugins-icon-container">
+                                                                                    <label for="confirmemailpassword"
+                                                                                        class="form-label fs-6 font-weight-bolder mb-3">Confirm
+                                                                                        Password</label>
+                                                                                    <input type="password"
+                                                                                        class="form-control form-control-lg form-control-solid "
+                                                                                        name="confirmemailpassword"
+                                                                                        id="confirmemailpassword">
+                                                                                    <div
+                                                                                        class="fv-plugins-message-container invalid-feedback">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="d-flex">
+                                                                            <button id="kt_signin_submit" type="button"
+                                                                                class="btn btn-primary me-2 px-6">Update
+                                                                                Email</button>
+                                                                            <button id="kt_signin_cancel"
+                                                                                onclick="addRow()" type="button"
+                                                                                class="btn btn-color-gray-400 btn-active-light-primary px-6">Cancel</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div id="MailOriginalContent1" class="row mb-3">
+                                                                    <div
+                                                                        class="row col-lg-12 justify-content-sm-between">
+                                                                        <div class="col-lg-6 ">
+                                                                            <label
+                                                                                class="col-form-label font-weight-bold ">Password</label>
+                                                                        </div>
+                                                                        <div class="col-sm-6 my-auto"
+                                                                            style="text-align-last: end;">
+                                                                            <button id="change-email"
+                                                                                onclick="DeleteRow1()"
+                                                                                class="btn btn-primary"> Reset
+                                                                                Password</button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <label
+                                                                        class="col-form-label ml-3 pt-0">**************</label>
+                                                                </div>
+                                                                <div id="MailHideContent1"
+                                                                    class="card card-body mb-3 d-none">
+                                                                    <div>
+                                                                        <div class="row mb-3 ">
+                                                                            <div class="col-lg-4 mb-3 mb-0">
+                                                                                <div class="row mb-0 ">
+                                                                                    <label for="currentpassword"
+                                                                                        class="form-label fs-6 font-weight-bolder mb-3">Current
+                                                                                        Password</label>
+                                                                                    <input type="password"
+                                                                                        class="form-control form-control-lg form-control-solid font-weight-bold fs-6"
+                                                                                        name="currentpassword"
+                                                                                        id="currentpassword">
+                                                                                    <div
+                                                                                        class="fv-plugins-message-container invalid-feedback">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-4">
+                                                                                <div
+                                                                                    class="fv-row mb-0 fv-plugins-icon-container">
+                                                                                    <label for="newpassword"
+                                                                                        class="form-label fs-6 font-weight-bolder mb-3">New
+                                                                                        Password</label>
+                                                                                    <input type="password"
+                                                                                        class="form-control form-control-lg form-control-solid font-weight-bold fs-6"
+                                                                                        name="newpassword"
+                                                                                        id="newpassword">
+                                                                                    <div
+                                                                                        class="fv-plugins-message-container invalid-feedback">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-4">
+                                                                                <div
+                                                                                    class="fv-row mb-0 fv-plugins-icon-container">
+                                                                                    <label for="confirmpassword"
+                                                                                        class="form-label fs-6 font-weight-bolder mb-3">Confirm
+                                                                                        New Password</label>
+                                                                                    <input type="password"
+                                                                                        class="form-control form-control-lg form-control-solid font-weight-bold fs-6"
+                                                                                        name="confirmpassword"
+                                                                                        id="confirmpassword">
+                                                                                    <div
+                                                                                        class="fv-plugins-message-container invalid-feedback">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div>
+                                                                        <div class="d-flex">
+                                                                            <button id="kt_signin_submit" type="button"
+                                                                                class="btn btn-primary me-2 px-6">Update
+                                                                                Password</button>
+                                                                            <button id="kt_signin_cancel"
+                                                                                onclick="addRow1()" type="button"
+                                                                                class="btn btn-gray btn-active-light-primary px-6">Cancel</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 justify-content-end mr-1">
+                                                                    <div class="">
+                                                                        <button type="submit"
+                                                                            class="btn btn-primary">Discard</button>
+                                                                        <button type="submit"
+                                                                            class="btn btn-primary">Save
+                                                                            Changes</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <!-- End: Form -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Start: Footer -->
+                    <footer class="footer">
+                        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021
+                                <a href="https://barfas.com/" target="_blank">BARFAS</a>. Tüm hakkı saklıdır.</span>
+                            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">PassBy <i
+                                    class="ti-heart text-danger ml-1"></i></span>
+                        </div>
+                    </footer>
+                    <!-- End: Footer -->
+                </div>
+            </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <!-- partial -->
+    </div>
+    <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="vendors/base/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <script src="vendors/chart.js/Chart.min.js"></script>
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    <script src="js/off-canvas.js"></script>
+    <script src="js/hoverable-collapse.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/todolist.js"></script>
+    <!-- endinject -->
+    <script>
+        function DeleteRow() {
+            const topside = document.querySelector("#MailOriginalContent");
+            const bottomside = document.querySelector("#MailHideContent");
+            topside.classList.add("d-none");
+            bottomside.classList.remove("d-none");
+        }
+        function addRow() 
+            const topsideB = document.querySelector('#MailOriginalContent');
+            const bottomsideB = document.querySelector("#MailHideContent");
+            topsideB.classList.remove("d-none");
+            bottomsideB.classList.add("d-none");
+        }
+        function DeleteRow1() {
+            const topside = document.querySelector("#MailOriginalContent1");
+            const bottomside = document.querySelector("#MailHideContent1");
+            topside.classList.add("d-none");
+            bottomside.classList.remove("d-none");
+        }
+        function addRow1() {
+            const topsideB = document.querySelector("#MailOriginalContent1");
+            const bottomsideB = document.querySelector("#MailHideContent1");
+            topsideB.classList.remove("d-none");
+            bottomsideB.classList.add("d-none");
+        }
+    </script>
+    <!-- Table Template JS  -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/main.js"></script>
+    <!-- Table Template JS  -->
+    <!-- Custom js for this page-->
+    <script src="js/dashboard.js"></script>
+    <!-- End custom js for this page-->
+</body>
+</html>
