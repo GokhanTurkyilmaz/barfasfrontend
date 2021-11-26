@@ -63,6 +63,23 @@ for (var i = 0; i < listElement.length; i++) {
   });
 }
 
+// var formButton = document.getElementById("formButton")
+// var Buttons = formButton.getElementsByClassName("openerBtn");
+// for (var i = 0; i < Buttons.length; i++) {
+//     if(Buttons.)
+
+
+
+//   Buttons[i].addEventListener("click", function() {
+//     var currentBtn = document.getElementsByClassName("activeRow");
+//     currentBtn[0].className = currentBtn[0].className.replace("activeRow","d-none");
+//     this.className += "activeRow";
+//     var hideRow = document.getElementsByClassName("hideRow");
+//     hideRow[0].className = hideRow[0].className.replace("d-none", "");
+   
+     
+//   });
+// }
 
 
 

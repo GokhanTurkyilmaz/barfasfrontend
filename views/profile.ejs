@@ -61,7 +61,7 @@
                 <ul class="navbar-nav navbar-nav-right">
                     <li class="nav-item dropdown mr-1">
                         <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle " type="button" id="dropdownMenuButton"
+                            <button class="btn btn-inverse-primary btn-rounded btn-fw dropdown-toggle " type="button" id="dropdownMenuButton"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                 Modules
                             </button>
@@ -172,7 +172,7 @@
             <!-- partial:partials/_sidebar.html -->
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav" id="sidebarItems">
-                    <li class="nav-item border-bottom">
+                    <li class="nav-item  border-bottom">
                         <a class="nav-link" href="#general">
                             <i class="ti-panel menu-icon"></i>
                             <span class="menu-title">General</span>
@@ -355,7 +355,7 @@
                                                 <!-- Start: Form -->
                                                 <div class="flex-column col-lg-9">
 
-                                                    <form class="card" style="margin-top: 50px;">
+                                                    <form class="card">
                                                         <div class="card-header">
 
                                                             <!--begin::Card title-->
@@ -477,7 +477,7 @@
                                                                         ID</label>
                                                                     <div class="col-sm-8">
                                                                         <fieldset disabled>
-                                                                            <input type="text" id="disabledTextInput"
+                                                                            <input type="text" id="disabledTextInput1"
                                                                                 class="form-control"
                                                                                 placeholder="AU29BF378924YTS7" />
                                                                         </fieldset>
@@ -489,7 +489,7 @@
                                                                         Code</label>
                                                                     <div class="col-sm-8">
                                                                         <fieldset disabled>
-                                                                            <input type="text" id="disabledTextInput"
+                                                                            <input type="text" id="disabledTextInput2"
                                                                                 class="form-control"
                                                                                 placeholder="QE29BH39985RQ778924YTS7" />
                                                                         </fieldset>
@@ -590,7 +590,7 @@
                                                                         Card No </label>
                                                                     <div class="col-sm-8">
                                                                         <fieldset disabled>
-                                                                            <input type="text" id="disabledTextInput"
+                                                                            <input type="text" id="disabledTextInput3"
                                                                                 class="form-control"
                                                                                 placeholder="QE29BH39985RQ778924YTS7" />
                                                                         </fieldset>
@@ -612,7 +612,7 @@
                                                                 <div class="row mb-3">
 
                                                                     <label
-                                                                        class="col-sm-3 col-form-label">Address</label>
+                                                                        class="col-sm-3 col-form-label font-weight-bold">Address</label>
                                                                     <div class="col-sm-9 mb-3">
                                                                         <input type="text"
                                                                             class="form-control form-control-lg">
@@ -622,7 +622,7 @@
                                                                 <div class="row mb-3">
 
                                                                     <label
-                                                                        class="col-sm-3 col-form-label">Remark</label>
+                                                                        class="col-sm-3 col-form-label font-weight-bold">Remark</label>
                                                                     <div class="col-sm-9 mb-3">
                                                                         <input type="text"
                                                                             class="form-control form-control-lg">
@@ -632,9 +632,9 @@
                                                                     <div class="">
 
                                                                         <button type="submit"
-                                                                            class="btn btn-primary">Discard</button>
+                                                                            class="btn btn-inverse-primary btn-rounded btn-fw">Discard</button>
                                                                         <button type="submit"
-                                                                            class="btn btn-primary">Save
+                                                                            class="btn btn-inverse-primary btn-rounded btn-fw">Save
                                                                             Changes</button>
 
                                                                     </div>
@@ -646,7 +646,7 @@
 
                                                     <div class="border-bottom"></div>
 
-                                                    <form class="card" style="margin-top: 50px; ">
+                                                    <form id="formButton" class="card" style="margin-top: 50px; ">
                                                         <div class="card-header">
 
                                                             <!--begin::Card title-->
@@ -661,9 +661,9 @@
                                                         </div>
                                                         <div class="collapse m-3" id="collapseExample1">
                                                             <div class="flex-md-row-fluid col-lg-12">
-                                                                <div id="MailOriginalContent" class="row mb-3">
+                                                                <div id="MailOriginalContent" class="row mb-3 activeRow">
                                                                     <div
-                                                                        class="row col-lg-12 justify-content-sm-between">
+                                                                        class="row col-lg-12 justify-content-sm-between block-card">
                                                                         <div class="col-lg-6 ">
                                                                             <label
                                                                                 class="col-form-label font-weight-bold ">Email
@@ -674,8 +674,10 @@
                                                                         <div class="col-sm-6 my-auto"
                                                                             style="text-align-last: end;">
                                                                             <button id="change-email"
-                                                                                onclick="DeleteRow()"
-                                                                                class="btn btn-primary"> Change
+                                                                            type="button"
+                                                                            onclick="DeleteRow()"
+                                                                                
+                                                                                class="btn btn-inverse-primary btn-rounded btn-fw openerBtn activeBtn"> Change
                                                                                 email</button>
                                                                         </div>
                                                                     </div>
@@ -684,7 +686,7 @@
                                                                 </div>
 
                                                                 <div id="MailHideContent"
-                                                                    class="card card-body mb-3 d-none">
+                                                                    class="card card-body mb-3 d-none hideRow">
                                                                     <div>
                                                                         <div class="row mb-3 ">
                                                                             <div class="col-lg-6 mb-3 mb-0">
@@ -706,7 +708,7 @@
                                                                             <div class="col-lg-6">
                                                                                 <div
                                                                                     class="fv-row mb-0 fv-plugins-icon-container">
-                                                                                    <label for="confirmemailpassword"
+                                                                                    <label
                                                                                         class="form-label fs-6 font-weight-bolder mb-3">Confirm
                                                                                         Password</label>
                                                                                     <input type="password"
@@ -720,11 +722,12 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="d-flex">
-                                                                            <button id="kt_signin_submit" type="button"
-                                                                                class="btn btn-primary me-2 px-6">Update
+                                                                            <button id="kt_signin" type="button"
+                                                                                class="btn btn-inverse-primary btn-rounded btn-fw me-2 px-6 ">Update
                                                                                 Email</button>
                                                                             <button id="kt_signin_cancel"
-                                                                                onclick="addRow()" type="button"
+                                                                            onclick="addRow()"
+                                                                             type="button"
                                                                                 class="btn btn-color-gray-400 btn-active-light-primary px-6">Cancel</button>
                                                                         </div>
                                                                     </div>
@@ -734,7 +737,7 @@
 
 
 
-                                                                <div id="MailOriginalContent1" class="row mb-3">
+                                                                <div id="MailOriginalContent1" class="row mb-3 activeRow">
                                                                     <div
                                                                         class="row col-lg-12 justify-content-sm-between">
                                                                         <div class="col-lg-6 ">
@@ -745,9 +748,11 @@
 
                                                                         <div class="col-sm-6 my-auto"
                                                                             style="text-align-last: end;">
-                                                                            <button id="change-email"
-                                                                                onclick="DeleteRow1()"
-                                                                                class="btn btn-primary"> Reset
+                                                                            <button id="change-password"
+                                                                            type="button"
+                                                                            onclick="DeleteRow1()"
+                                                                                
+                                                                                class="btn btn-inverse-primary btn-rounded btn-fw openerBtn"> Reset
                                                                                 Password</button>
                                                                         </div>
                                                                     </div>
@@ -756,7 +761,7 @@
                                                                 </div>
 
                                                                 <div id="MailHideContent1"
-                                                                    class="card card-body mb-3 d-none">
+                                                                    class="card card-body mb-3 d-none hideRow">
                                                                     <div>
                                                                         <div class="row mb-3 ">
                                                                             <div class="col-lg-4 mb-3 mb-0">
@@ -807,10 +812,10 @@
                                                                     </div>
                                                                     <div>
                                                                         <div class="d-flex">
-                                                                            <button id="kt_signin_submit" type="button"
-                                                                                class="btn btn-primary me-2 px-6">Update
+                                                                            <button id="kt_signin1" type="button"
+                                                                                class="btn btn-inverse-primary btn-rounded btn-fw me-2 px-6">Update
                                                                                 Password</button>
-                                                                            <button id="kt_signin_cancel"
+                                                                            <button id="kt_signin_cancel1"
                                                                                 onclick="addRow1()" type="button"
                                                                                 class="btn btn-gray btn-active-light-primary px-6">Cancel</button>
                                                                         </div>
@@ -821,9 +826,9 @@
                                                                     <div class="">
 
                                                                         <button type="submit"
-                                                                            class="btn btn-primary">Discard</button>
+                                                                            class="btn btn-inverse-primary btn-rounded btn-fw">Discard</button>
                                                                         <button type="submit"
-                                                                            class="btn btn-primary">Save
+                                                                            class="btn btn-inverse-primary btn-rounded btn-fw">Save
                                                                             Changes</button>
 
                                                                     </div>
@@ -931,7 +936,7 @@
 
     <!-- Table Template JS  -->
     <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
+    
 
     <script src="js/main.js"></script>
 
