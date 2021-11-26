@@ -159,7 +159,6 @@ var data = JSON.stringify({
 var config = {
   method: 'post',
   url: 'https://barfas.iran.liara.run/login/',
- // url: 'http://localhost:3000/insert/device',
   headers: { 
     'Content-Type': 'application/json'
   },
@@ -187,7 +186,7 @@ axios(config)
   */
   app.post('/add/personnel', urlencodedParser, function (req, res) {
     var data = JSON.stringify({
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxN2MwZDdjMTE4MWViNDg4MzI4MWU5MCIsImlhdCI6MTYzNTUyOTkxNH0.WoBgn29V4aiNONxuXMsoFln8K4svvQVndg-Pwhdqa0Q",
+      "token": req.cookies.Abarxqza2,
       "Name": req.body.Name,
       "FullName": req.body.FullName,
       "Email": req.body.Email,
@@ -221,8 +220,7 @@ axios(config)
     
     var config = {
       method: 'post',
-     /// url: 'https://barfas-server.herokuapp.com/insert/personnel',
-     url: 'http://localhost:3000/insert/personnel',
+     url: 'https://barfas.iran.liara.run/insert/personnel',
       headers: { 
         'Content-Type': 'application/json'
       },
