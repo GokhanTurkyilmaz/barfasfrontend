@@ -27,6 +27,7 @@ const { json } = require('body-parser')
    res.render('index')
   }
 })
+var serverUrl = "https://barfas.iran.liara.run"
 
  app.get('/admin', urlencodedParser, function (req, res) {
    if (req.cookies.Abarxqza2 != null){
@@ -56,9 +57,11 @@ app.get('/addperson', urlencodedParser, function (req, res) {
     const answer =  apis.departmenlist
     if(answer != null){
       res.render('addperson',{data:answer})
+    }else{
+      res.redirect('/addperson')
     }
 
-  },100)
+  },120)
 
   
 
@@ -115,7 +118,7 @@ app.post('/login/loginPost', urlencodedParser, function (req, res) {
       }else{
         res.send("you are not user")
       }
-    },120)
+    },250)
 
   
   
@@ -199,7 +202,7 @@ axios(config)
         "EndUser": "true"
       },
       "Departman": req.body.Departman,
-      "UserId": "61879efcfb37724ae80c6db8",
+      "Yourtoken": req.cookies.Abarxqza2,
       "PersonnelId": req.body.PersonnelId,
       "StaffCode": req.body.StaffCode,
       "situation": {
@@ -241,6 +244,13 @@ axios(config)
       console.log(error);
     });
       })
+/**
+ * logout
+ */
+ app.get('/logout', urlencodedParser, function (req, res) {
+  res.clearCookie('Abarxqza2')
+  res.redirect('/login')
+})
 
  app.listen(port, () => {
  console.log(`Example app listening at http://localhost:${port}`)

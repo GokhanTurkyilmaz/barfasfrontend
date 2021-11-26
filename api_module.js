@@ -3,6 +3,8 @@
  */
 var axios = require('axios');
 
+var serverUrl = "https://barfas.iran.liara.run"
+
 function show_tabble(token){
 var data = JSON.stringify({
   "Yourtoken": token
