@@ -8,6 +8,8 @@
  var axios = require('axios')
  var pach = require('path')
  var apis = require('./api_module')
+ var deviceService = require('./adddevice')
+ var personService = require('./addperson')
  app.set("view engine", "ejs")
  
  app.set('services', 'public/services');
@@ -34,6 +36,7 @@ var serverUrl = "https://barfas.iran.liara.run"
     res.render('index')
    }
  })
+
  app.get('/mainpage', urlencodedParser, function (req, res) {
   apis.show_mydevice(req.cookies.Abarxqza2)
   setTimeout(function(){
@@ -63,13 +66,36 @@ app.get('/addperson', urlencodedParser, function (req, res) {
 
   },120)
 
+})
+app.post('/add/device', urlencodedParser, function (req, res) {
+  deviceService.deviceadd(req.body.DeviceName,req.body.Sn,req.body.Model,req.body.Type, req.body.Department, req.body.DeviceIP,
+    req.body.DeviceAdmin,req.body.DeviceSuperUser,req.body.Remark,   req.body.UserId, req.body.role
+    );
+    setTimeout(function(){
+      if(deviceService.deviceAddItems!=null){
+        res.redirect('/adddevice')
+      }
+      else{
+        res.redirect('/mainpage')
+      }
   
+    },1000)
 
 })
-app.get('/adddevice', urlencodedParser, function (req, res) {
+app.post('/add/personnel',urlencodedParser,function(req,res){
+  var myToken=req.cookies.Abarxqza2;
+  var myToken2=req.cookies.Abarxqza2;
+  personService.personadd(myToken,req.body.Name,req.body.FullName,req.body.Email,req.body.PhoneNumber,req.body.Password,req.body.Sex,
+    req.body.Departman,myToken2,req.body.PersonnelId,req.body.StaffCode,req.body.Whether,req.body.SeniorMode,req.body.CardNo,req.body.PunchPwd,
+    req.body.EntryStatus,req.body.IDNO,req.body.Positsion,req.body.StaffType,req.body.Degree,req.body.Address,req.body.tell,req.body.Photo);
 
-  res.render('adddevice')
-
+  setTimeout(function(){
+    if(personService.personAddItems!=null){
+      res.redirect('/addperson')
+    }else{
+      res.redirect('/mainpage')
+    }
+  },1000)
 })
 app.get('/smartrules', urlencodedParser, function (req, res) {
 
@@ -121,7 +147,6 @@ app.post('/login/loginPost', urlencodedParser, function (req, res) {
     },250)
 
   
-  
 })
 
  app.get('/login', urlencodedParser, function (req, res) {
@@ -135,115 +160,11 @@ app.get('/Register', urlencodedParser, function (req, res) {
   res.render('Register')
 
 })
- 
-
-/**
- * Actions
- */
-
- /**
-  * add devise
-  */
-  app.post('/add/device', urlencodedParser, function (req, res) {
-var data = JSON.stringify({
-  "DeviceName": req.body.DeviceName,
-  "SN": req.body.SN,
-  "Model": req.body.Model,
-  "Type": req.body.Type,
-  "Department": req.body.Department,
-  "DeviceIP": req.body.DeviceIP,
-  "DeviceAdmin": req.body.DeviceAdmin,
-  "DeviceSuperUser": req.body.DeviceSuperUser,
-  "Remark": req.body.Remark,
-  "UserId": "61879efcfb37724ae80c6db8",
-  "role": "admin"
-});
-
-var config = {
-  method: 'post',
-  url: 'https://barfas.iran.liara.run/login/',
-  headers: { 
-    'Content-Type': 'application/json'
-  },
-  data : data
-};
-
-axios(config)
-.then(function (response) {
-  const additem = JSON.stringify(response.data)
-  const dataadd = JSON.parse(additem) 
-      if (dataadd.Status === true){
-        res.redirect('/mainpage')
-      }else {
-        res.send("err!")
-      }
+app.get('/adddevice', urlencodedParser, function (req, res) {
+  res.render('adddevice')
 })
-.catch(function (error) {
-  console.log(error);
-});
-  })
 
 
- /**
-  * add personnel 
-  */
-  app.post('/add/personnel', urlencodedParser, function (req, res) {
-    var data = JSON.stringify({
-      "token": req.cookies.Abarxqza2,
-      "Name": req.body.Name,
-      "FullName": req.body.FullName,
-      "Email": req.body.Email,
-      "PhoneNumber": req.body.PhoneNumber,
-      "Password": req.body.Password,
-      "Sex": req.body.Sex,
-      "Role": {
-        "Admin": "false",
-        "Customer": "false",
-        "EndUser": "true"
-      },
-      "Departman": req.body.Departman,
-      "Yourtoken": req.cookies.Abarxqza2,
-      "PersonnelId": req.body.PersonnelId,
-      "StaffCode": req.body.StaffCode,
-      "situation": {
-        "Whether": req.body.Whether,
-        "SeniorMode": req.body.SeniorMode
-      },
-      "CardNo": req.body.CardNo,
-      "PunchPwd": req.body.PunchPwd,
-      "EntryStatus": req.body.EntryStatus,
-      "IDNO": req.body.IDNO,
-      "Positsion": req.body.Positsion,
-      "StaffType": req.body.StaffType,
-      "Degree": req.body.Degree,
-      "Address": req.body.Address,
-      "tell": req.body.tell,
-      "Photo": req.body.Photo
-    });
-    
-    var config = {
-      method: 'post',
-     url: 'https://barfas.iran.liara.run/insert/personnel',
-      headers: { 
-        'Content-Type': 'application/json'
-      },
-      data : data
-    };
-    
-    axios(config)
-    .then(function (response) {
-      const additem = JSON.stringify(response.data)
-      const dataadd = JSON.parse(additem) 
-          if (dataadd.Status === true){
-            res.send(" a personnel has been added but you not have UI for show that, you can see from postman or database")
-          }else {
-            res.send("err!")
-          }
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-      })
 /**
  * logout
  */
