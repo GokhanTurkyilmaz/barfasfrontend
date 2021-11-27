@@ -90,7 +90,7 @@ app.post('/add/personnel',urlencodedParser,function(req,res){
     req.body.EntryStatus,req.body.IDNO,req.body.Positsion,req.body.StaffType,req.body.Degree,req.body.Address,req.body.tell,req.body.Photo);
 
   setTimeout(function(){
-    if(apisPerson.personAddItems!=null){
+    if(personService.personAddItems!=null){
       res.redirect('/addperson')
     }else{
       res.redirect('/mainpage')
