@@ -427,7 +427,7 @@
                                                                             <label
                                                                                 class="col-sm-3 col-form-label font-weight-bold">Name</label>
                                                                             <div class="col-sm-9">
-                                                                                <input type="text" class="form-control" placeholder="<%= myprofile[0].Name%>">
+                                                                                <input type="text" class="form-control">
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -436,7 +436,7 @@
                                                                             <label
                                                                                 class="col-sm-3 col-form-label font-weight-bold">Surname</label>
                                                                             <div class="col-sm-9">
-                                                                                <input class="form-control" placeholder="<%= myprofile[0].FullName%>">
+                                                                                <input class="form-control" >
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -446,7 +446,7 @@
                                                                         class="col-lg-4 col-form-label font-weight-bold ">
                                                                         E-mail</label>
                                                                     <div class="col-sm-8">
-                                                                        <input type="text" class="form-control" placeholder="<%= myprofile[0].Email%>">
+                                                                        <input type="text" class="form-control" >
                                                                     </div>
                                                                 </div>
                                                                 <div class="row mb-3">
@@ -454,7 +454,7 @@
                                                                         class="col-lg-4 col-form-label font-weight-bold ">Contact
                                                                         Phone</label>
                                                                     <div class="col-sm-8">
-                                                                        <input type="text" class="form-control" placeholder="<%= myprofile[0].PhoneNumber%>">
+                                                                        <input type="text" class="form-control" >
                                                                     </div>
                                                                 </div>
                                                                 <div class="row mb-3">
@@ -605,7 +605,7 @@
                                                                         class="col-sm-3 col-form-label">Address</label>
                                                                     <div class="col-sm-9 mb-3">
                                                                         <input type="text"
-                                                                            class="form-control form-control-lg" placeholder="<%= myprofile[0].Address%>" >
+                                                                            class="form-control form-control-lg" >
                                                                     </div>
                                                                 </div>
                                                                 <div class="row mb-3">
@@ -848,7 +848,7 @@
             topside.classList.add("d-none");
             bottomside.classList.remove("d-none");
         }
-        function addRow() 
+        function addRow() {
             const topsideB = document.querySelector('#MailOriginalContent');
             const bottomsideB = document.querySelector("#MailHideContent");
             topsideB.classList.remove("d-none");
